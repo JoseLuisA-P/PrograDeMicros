@@ -2505,8 +2505,8 @@ main: ;configuraciones iniciales del uC
     bsf STATUS,5 ;seleccion de banco 1
     bcf STATUS,6
     clrf TRISD ;colocar puerto D como salida
-    MOVLW 0X1F ;cargar el valor en W de la configuracion del puerto C
-    MOVWF TRISC
+    MOVLW 0X1F ;cargar el valor en W de la configuracion
+    MOVWF TRISC ;del puerto C
     clrf TRISB ;colocar puerto B como salida
     clrf TRISA ;coloca puerto A como salida
     bsf STATUS,6 ;seleccionar el banco 4
