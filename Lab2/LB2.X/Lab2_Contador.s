@@ -4,6 +4,8 @@
 ;Compilador: pic-as(v2.30), MPLABX V5.45
 ;
 ;Programa:Contadores de 4 bits en 2 puertos y resultado de la suma con carry
+; en otro puerto distinto, utilizando 2 botones por puerto para incrementer
+; y uno para desplegar el resultado de la suma
 ;******************************************************************************
 
 PROCESSOR 16F887
@@ -60,7 +62,7 @@ main:	;configuraciones iniciales del uC
     clrf    TRISA	    ;coloca puerto A como salida
     bsf	    STATUS,6	    ;seleccionar el banco 4
     clrf    ANSEL	    ;configurar los ansel para colocar los pines
-    clrf    ANSELH	    ;como digitales
+    clrf    ANSELH	    ;como digitales 
     bcf	    STATUS,5	    ;seleccion del banco 0
     bcf	    STATUS,6    
     clrf    PORTD	    ;colocar en 0 los puertos a utilizar

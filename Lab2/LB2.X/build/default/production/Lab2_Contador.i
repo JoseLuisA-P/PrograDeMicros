@@ -7,6 +7,8 @@
 ;Compilador: pic-as(v2.30), MPLABX V5.45
 ;
 ;Programa:Contadores de 4 bits en 2 puertos y resultado de la suma con carry
+; en otro puerto distinto, utilizando 2 botones por puerto para incrementer
+; y uno para desplegar el resultado de la suma
 ;******************************************************************************
 
 PROCESSOR 16F887
@@ -2456,7 +2458,7 @@ stk_offset SET 0
 auto_size SET 0
 ENDM
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.inc" 2 3
-# 11 "Lab2_Contador.s" 2
+# 13 "Lab2_Contador.s" 2
 ;******************************************************************************
 ;Palabras de configuracion
 ;******************************************************************************
