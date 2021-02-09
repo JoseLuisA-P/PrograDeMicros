@@ -2493,7 +2493,7 @@ RES: DS 1 ;resultado de la suma
 ;Vector de reset
 ;******************************************************************************
 PSECT resVect, abs, delta = 2, class = CODE
-ORG 0X00h ;posicion del vector de reset
+ORG 00h ;posicion del vector de reset
 VectorReset:
     PAGESEL main
     goto main
@@ -2501,7 +2501,7 @@ VectorReset:
 ;Configuracion del microcontrolador
 ;******************************************************************************
 PSECT code, abs, delta = 2
-ORG 0x10h
+ORG 100h ;posicion del codigo
 
 main: ;configuraciones iniciales del uC
     bsf STATUS,5 ;seleccion de banco 1
