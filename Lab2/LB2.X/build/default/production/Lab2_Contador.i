@@ -2508,8 +2508,8 @@ main: ;configuraciones iniciales del uC
     clrf TRISB ;colocar puerto B como salida
     clrf TRISA ;coloca puerto A como salida
     bsf STATUS,6 ;seleccionar el banco 4
-    clrf ANSEL
-    clrf ANSELH
+    clrf ANSEL ;configurar los ansel para colocar los pines
+    clrf ANSELH ;como digitales
     bcf STATUS,5 ;seleccion del banco 0
     bcf STATUS,6
     clrf PORTD ;colocar en 0 los puertos a utilizar
