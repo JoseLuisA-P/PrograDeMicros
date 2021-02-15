@@ -129,7 +129,8 @@ timer0:
     return
 
 toogle:
-    INCF    PORTE
+    movlw   0x01		;coloca en 1 y hace XOR con PORTE en el 0
+    XORWF   PORTE,F		;si este es distinto lo coloca en 0, sino en 1
     BCF	    BandCont,2
     clrf    PORTD		;coloca el valor del puerto D en 0
     return
