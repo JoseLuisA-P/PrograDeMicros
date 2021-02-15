@@ -2480,6 +2480,9 @@ ENDM
   CONFIG WRT = OFF ; Flash Program Memory Self Write Enable bits (Write protection off)
 
 ;--------------------------Variables a utilizar---------------------------------
+PSECT udata_bank0
+Contador: DS 1 ;variable del contador
+BandCont: DS 1 ;variable para el aumento
 
 ;-------------------------------MACROS------------------------------------------
 ConfigPines MACRO ;Configurar pines acorde a su funcionamiento
@@ -2497,47 +2500,101 @@ ConfigPines MACRO ;Configurar pines acorde a su funcionamiento
     clrf PORTC
     clrf PORTD
     clrf PORTE
+    clrf Contador ;Variable contador en 0
     ENDM ;termina el macro
 
 configTimer MACRO ;Configurar T0 y precargar valor, limpiar bandera
     BANKSEL OPTION_REG
-    BCF OPTION_REG,5 ;T0 a reloj interno [((OPTION_REG) and 07Fh), 5]
-    BSF OPTION_REG,4 ;Prescaler a el T0 [((OPTION_REG) and 07Fh), 3]
-    BCF OPTION_REG,2 ;configurar el Prescaler [((OPTION_REG) and 07Fh), 2]
-    BCF OPTION_REG,1 ;[((OPTION_REG) and 07Fh), 1]
-    BCF OPTION_REG,0 ;[((OPTION_REG) and 07Fh), 0]
+    BCF OPTION_REG,5 ;T0 a reloj interno [((OPTION_REG) and 07Fh), 5]=0
+    BCF OPTION_REG,3 ;Prescaler a el T0 [((OPTION_REG) and 07Fh), 3]=0
+    BSF OPTION_REG,2 ;configurar el Prescaler [((OPTION_REG) and 07Fh), 2]
+    BSF OPTION_REG,1 ;[((OPTION_REG) and 07Fh), 1]
+    BCF OPTION_REG,0 ;[((OPTION_REG) and 07Fh), 0] configurado en 110--1:128
     BANKSEL TMR0
-    ;BSF INTCON,5 ;[((INTCON) and 07Fh), 5] habilitar interrupcion T0
-    MOVLW 200
+    MOVLW 12 ;se precarga el T0 con 12
     MOVWF TMR0
     BCF INTCON,2 ;[((INTCON) and 07Fh), 2] apagar la bandera del T0
 ENDM
 
+configOsc MACRO
+    BANKSEL OSCCON ;Configurar el oscilador inter
+    BSF OSCCON,6 ;[((OSCCON) and 07Fh), 6]=1
+    BCF OSCCON,5 ;[((OSCCON) and 07Fh), 5]=0
+    BCF OSCCON,4 ;[((OSCCON) and 07Fh), 4]=0------ INTC de 1MHz
+    BSF OSCCON,0 ;((OSCCON) and 07Fh), 0 reloj interno
+ENDM
 ;--------------------------------Vector de Reset--------------------------------
 PSECT resVect, delta=2, abs, class=CODE
 ORG 0000h
-ResetVec:
     PAGESEL main
     goto main
 
 ;------------------------Configuracion Microcontrolador-------------------------
-PSECT loopPrincipal, delta=2, abs
-ORG 0X000A
+PSECT loopPrincipal, delta=2, class =CODE
 main:
     ConfigPines
     configTimer
+    configOsc
 
-encendido:
+loop:
+    BANKSEL INTCON
+    BTFSC INTCON,2 ;mira si la bandera del timmer esta arriba
+    call timer0
+    ;comprobar el estado del boton de aumento
+    BTFSC ((PORTB) and 07Fh), 0 ;boton de aumento
+    BSF BandCont,0 ;bit0 de aumento para permitir el contar
+    BTFSS ((PORTB) and 07Fh), 0 ;al dejar de presionar el boton
+    call contArriba
+    ;comprobar el estado del boton de decremento
+    BTFSC ((PORTB) and 07Fh), 1 ;boton de decremento
+    BSF BandCont,1 ;bit1 de decremento para permitir el disminuir
+    BTFSS ((PORTB) and 07Fh), 1 ;al dejar de presionar el boton
+    call contAbajo
+    ;comprobar si no se pasan del valor, sino regresa el valor a 0
+    BTFSC PORTC,4
+    clrf PORTC
+    goto loop
+
+contAbajo:
+    BTFSC BandCont,1 ;mira si es 1 para disminuir
+    DECF PORTC ;decrementar el valor del puerto C
+    BCF BandCont,1 ;coloca en 0 la bandera de Decremento
+    return
+
+contArriba:
+    BTFSC BandCont,0 ;mira si es 1 para contar
+    INCF PORTC ;aumenta el valor del puertoC
+    BCF BandCont,0 ;coloca en 0 la bandera en Aumento
+    return
+
+timer0:
     BANKSEL TMR0
-    BTFSS INTCON,2
-    goto $-1
-    BANKSEL PORTC
-    BSF PORTC,0
-    BANKSEL TMR0
-    MOVLW 200
+    MOVLW 12 ;se precarga el T0 con 12
     MOVWF TMR0
-    BCF INTCON,2
-    GOTO encendido
+    INCF Contador ;Incrementa el valor del contador
+    BTFSC Contador,2 ;revisa si el contador ya llego a 4
+    call aumentoPortD ;aumenta el puerto y reinicia el contador
+    BCF INTCON,2 ;apaga la bandera del timer0
+    return
 
+toogle:
+    INCF PORTE
+    BCF BandCont,2
+    clrf PORTD ;coloca el valor del puerto D en 0
+    return
+
+aumentoPortD:
+    INCF PORTD ;incrementa el puerto D
+    BTFSC PORTD,4 ;si se pasa de 4bits regresa a 0
+    CLRF PORTD
+    CLRF Contador ;el contador regresa a 0
+    BCF STATUS,2 ;en 0 el valor de la bandera de 0
+    MOVF PORTC,W ;revisa el valor del led
+    XORWF PORTD,W ;Resta a C el valor de D
+    BTFSC STATUS,2 ;Revisa si el valor da como resultado 0
+    BSF BandCont,2 ;Activa la 3ra bandera del contador
+    BTFSC BandCont,2
+    call toogle ;Hacer toogle al Led
+    return
 
 END

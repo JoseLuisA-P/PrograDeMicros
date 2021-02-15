@@ -1,5 +1,5 @@
-__S0 0 0 ABS 0
-__S1 0 0 ABS 0
+__S0 800 0 ABS 0
+__S1 21 0 ABS 0
 __S3 0 0 ABS 0
 __Hconfig 2009 0 CONFIG 4
 __Lconfig 0 0 CONFIG 4
@@ -19,9 +19,9 @@ __Hudata 0 0 ABS 0
 __Ludata 0 0 ABS 0
 __Hudata_bank1 0 0 ABS 0
 __Ludata_bank1 0 0 ABS 0
-__Hspace_0 34 0 ABS 0
+__Hspace_0 800 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__Hspace_1 0 0 ABS 0
+__Hspace_1 21 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
@@ -29,30 +29,40 @@ __Hspace_4 4010 0 ABS 0
 __Lspace_4 0 0 ABS 0
 __Hudata_bank2 0 0 ABS 0
 __Ludata_bank2 0 0 ABS 0
-__HloopPrincipal 34 0 ABS 0
+__HloopPrincipal 0 0 ABS 0
 __LloopPrincipal 0 0 ABS 0
 __Hudata_bank3 0 0 ABS 0
 __Ludata_bank3 0 0 ABS 0
 %segments
+udata_bank0 20 20 BANK0 20 1
+loopPrincipal F92 FFF CODE F92 0
 %locals
 build/default/debug/main.o
 main.s
-69 0 0 CODE 0
-70 0 0 CODE 0
-71 0 0 CODE 0
-72 2 0 CODE 0
-76 0 0 ABS 0
-77 A 0 ABS 0
-78 A 0 ABS 0
-79 1B 0 ABS 0
-81 27 0 ABS 0
-82 27 0 ABS 0
-83 29 0 ABS 0
-84 2A 0 ABS 0
-85 2B 0 ABS 0
-86 2D 0 ABS 0
-87 2E 0 ABS 0
-88 30 0 ABS 0
-89 31 0 ABS 0
-90 32 0 ABS 0
-91 33 0 ABS 0
+78 0 0 CODE 0
+79 0 0 CODE 0
+80 2 0 CODE 0
+84 7C9 0 CODE 0
+85 7C9 0 CODE 0
+86 7DB 0 CODE 0
+87 7E7 0 CODE 0
+88 7ED 0 CODE 0
+89 7ED 0 CODE 0
+90 7EF 0 CODE 0
+91 7F0 0 CODE 0
+92 7F1 0 CODE 0
+94 7F2 0 CODE 0
+95 7F2 0 CODE 0
+96 7F4 0 CODE 0
+97 7F5 0 CODE 0
+98 7F6 0 CODE 0
+99 7F7 0 CODE 0
+100 7F8 0 CODE 0
+101 7F9 0 CODE 0
+102 7FA 0 CODE 0
+104 7FB 0 CODE 0
+105 7FB 0 CODE 0
+106 7FC 0 CODE 0
+107 7FD 0 CODE 0
+108 7FE 0 CODE 0
+109 7FF 0 CODE 0

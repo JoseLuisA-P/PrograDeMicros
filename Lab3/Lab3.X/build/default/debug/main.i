@@ -2480,6 +2480,8 @@ ENDM
   CONFIG WRT = OFF ; Flash Program Memory Self Write Enable bits (Write protection off)
 
 ;--------------------------Variables a utilizar---------------------------------
+PSECT udata_bank0
+Contador: DS 1 ;variable del contador
 
 ;-------------------------------MACROS------------------------------------------
 ConfigPines MACRO ;Configurar pines acorde a su funcionamiento
@@ -2497,47 +2499,62 @@ ConfigPines MACRO ;Configurar pines acorde a su funcionamiento
     clrf PORTC
     clrf PORTD
     clrf PORTE
+    clrf Contador ;Variable contador en 0
     ENDM ;termina el macro
 
 configTimer MACRO ;Configurar T0 y precargar valor, limpiar bandera
     BANKSEL OPTION_REG
-    BCF OPTION_REG,5 ;T0 a reloj interno [((OPTION_REG) and 07Fh), 5]
-    BSF OPTION_REG,4 ;Prescaler a el T0 [((OPTION_REG) and 07Fh), 3]
-    BCF OPTION_REG,2 ;configurar el Prescaler [((OPTION_REG) and 07Fh), 2]
-    BCF OPTION_REG,1 ;[((OPTION_REG) and 07Fh), 1]
-    BCF OPTION_REG,0 ;[((OPTION_REG) and 07Fh), 0]
+    BCF OPTION_REG,5 ;T0 a reloj interno [((OPTION_REG) and 07Fh), 5]=0
+    BCF OPTION_REG,3 ;Prescaler a el T0 [((OPTION_REG) and 07Fh), 3]=0
+    BSF OPTION_REG,2 ;configurar el Prescaler [((OPTION_REG) and 07Fh), 2]
+    BSF OPTION_REG,1 ;[((OPTION_REG) and 07Fh), 1]
+    BCF OPTION_REG,0 ;[((OPTION_REG) and 07Fh), 0] configurado en 110--1:128
     BANKSEL TMR0
-    ;BSF INTCON,5 ;[((INTCON) and 07Fh), 5] habilitar interrupcion T0
-    MOVLW 200
+    MOVLW 12 ;se precarga el T0 con 12
     MOVWF TMR0
     BCF INTCON,2 ;[((INTCON) and 07Fh), 2] apagar la bandera del T0
 ENDM
 
+configOsc MACRO
+    BANKSEL OSCCON ;Configurar el oscilador inter
+    BSF OSCCON,6 ;[((OSCCON) and 07Fh), 6]=1
+    BCF OSCCON,5 ;[((OSCCON) and 07Fh), 5]=0
+    BCF OSCCON,4 ;[((OSCCON) and 07Fh), 4]=0------ INTC de 1MHz
+    BSF OSCCON,0 ;((OSCCON) and 07Fh), 0 reloj interno
+ENDM
 ;--------------------------------Vector de Reset--------------------------------
 PSECT resVect, delta=2, abs, class=CODE
 ORG 0000h
-ResetVec:
     PAGESEL main
     goto main
 
 ;------------------------Configuracion Microcontrolador-------------------------
-PSECT loopPrincipal, delta=2, abs
-ORG 0X000A
+PSECT loopPrincipal, delta=2, class =CODE
 main:
     ConfigPines
     configTimer
-
-encendido:
-    BANKSEL TMR0
+    configOsc
+loop:
+    BANKSEL INTCON
     BTFSS INTCON,2
-    goto $-1
-    BANKSEL PORTC
-    BSF PORTC,0
-    BANKSEL TMR0
-    MOVLW 200
-    MOVWF TMR0
-    BCF INTCON,2
-    GOTO encendido
+    call timer0
+    goto loop
 
+timer0:
+    BANKSEL TMR0
+    MOVLW 12 ;se precarga el T0 con 12
+    MOVWF TMR0
+    INCF Contador
+    BTFSC Contador,2
+    call aumentoPortD
+    BCF INTCON,2
+    return
+
+    aumentoPortD:
+    INCF PORTD
+    BTFSC PORTD,4
+    CLRF PORTD
+    CLRF Contador
+    return
 
 END

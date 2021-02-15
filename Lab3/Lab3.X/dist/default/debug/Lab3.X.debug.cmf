@@ -13,7 +13,8 @@
 %PSECTS
 $build/default/debug/main.o
 resVect CODE 0 0 0 3 2
-loopPrincipal - 0 0 0 34 2
+udata_bank0 BANK0 1 20 20 1 1
+loopPrincipal CODE 0 7C9 7C9 37 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -21,25 +22,31 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 20-6F 1
+RAM 21-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 20-6F 1
+BANK0 21-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 34-1FFF 2
-ENTRY 34-1FFF 2
+CONST 3-7C8 2
+CONST 800-1FFF 2
+ENTRY 3-7C8 2
+ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
-CODE 34-1FFF 2
+CODE 3-7C8 2
+CODE 800-1FFF 2
+SFR0 6-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 COMMON 70-7F 1
 EEDATA 2100-21FF 2
-STRCODE 34-1FFF 2
-STRING 34-1FFF 2
+STRCODE 3-7C8 2
+STRCODE 800-1FFF 2
+STRING 3-7C8 2
+STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -54,25 +61,33 @@ STRING 34-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/debug/main.o
-0 loopPrincipal ABS >76:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-A loopPrincipal ABS >77:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-A loopPrincipal ABS >78:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-1B loopPrincipal ABS >79:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-27 loopPrincipal ABS >81:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-27 loopPrincipal ABS >82:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-29 loopPrincipal ABS >83:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-2A loopPrincipal ABS >84:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-2B loopPrincipal ABS >85:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-2D loopPrincipal ABS >86:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-2E loopPrincipal ABS >87:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-30 loopPrincipal ABS >88:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-31 loopPrincipal ABS >89:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-32 loopPrincipal ABS >90:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-33 loopPrincipal ABS >91:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-0 resVect CODE >69:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-0 resVect CODE >70:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-0 resVect CODE >71:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
-2 resVect CODE >72:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7C9 loopPrincipal CODE >84:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7C9 loopPrincipal CODE >85:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7DB loopPrincipal CODE >86:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7E7 loopPrincipal CODE >87:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7ED loopPrincipal CODE >88:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7ED loopPrincipal CODE >89:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7EF loopPrincipal CODE >90:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F0 loopPrincipal CODE >91:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F1 loopPrincipal CODE >92:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F2 loopPrincipal CODE >94:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F2 loopPrincipal CODE >95:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F4 loopPrincipal CODE >96:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F5 loopPrincipal CODE >97:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F6 loopPrincipal CODE >98:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F7 loopPrincipal CODE >99:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F8 loopPrincipal CODE >100:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7F9 loopPrincipal CODE >101:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7FA loopPrincipal CODE >102:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7FB loopPrincipal CODE >104:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7FB loopPrincipal CODE >105:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7FC loopPrincipal CODE >106:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7FD loopPrincipal CODE >107:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7FE loopPrincipal CODE >108:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+7FF loopPrincipal CODE >109:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+0 resVect CODE >78:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+0 resVect CODE >79:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
+2 resVect CODE >80:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab3\Lab3.X\main.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -85,15 +100,15 @@ A loopPrincipal ABS >78:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontrolador
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 34 0 ABS 0 - -
-__Hspace_1 0 0 ABS 0 - -
+__Hspace_0 800 0 ABS 0 - -
+__Hspace_1 21 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Hudata_bank0 0 0 ABS 0 udata_bank0 -
 __Hudata_bank1 0 0 ABS 0 udata_bank1 -
 __Hudata_bank2 0 0 ABS 0 udata_bank2 -
 __Hudata_bank3 0 0 ABS 0 udata_bank3 -
-__HloopPrincipal 68 0 ABS 0 loopPrincipal -
+__HloopPrincipal 0 0 ABS 0 loopPrincipal -
 __LresVect 0 0 ABS 0 resVect -
 __Hedata 0 0 ABS 0 edata -
 __Hudata 0 0 ABS 0 udata -
@@ -104,8 +119,8 @@ __Hcode 0 0 ABS 0 code -
 __Hdata 0 0 ABS 0 data -
 __Lcode 0 0 ABS 0 code -
 __Ldata 0 0 ABS 0 data -
-__S0 0 0 ABS 0 - -
-__S1 0 0 ABS 0 - -
+__S0 800 0 ABS 0 - -
+__S1 21 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __HresVect 0 0 ABS 0 resVect -
 __Lconfig 0 0 CONFIG 4 config -
@@ -144,6 +159,8 @@ __Ludata_shr 0 0 ABS 0 udata_shr -
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
+udata_bank0 1 20 20 1 1
+loopPrincipal 0 7C9 F92 37 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
