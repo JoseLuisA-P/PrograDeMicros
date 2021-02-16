@@ -2,11 +2,23 @@
 ;
 ;   Autor: Jose Luis Alvarez Pineda
 ;   Archivo: main.s
-;   Fecha de creacion/modificacion: 
+;   Fecha de creacion/modificacion: 16 febrero 2021
 ;   Dispositivo: PIC16F887
 ;   Descripcion:
+/* En el puerto D se encuentra un contador binario de 4 bits el cual incrementa
+    cada 500ms utilizando el timmer 0 y el oscilador interno a 1Mhz.
+   En el puerto C se dan las salidas para un 7-segmentos que cuenta de 0 a F
+     su valor aumenta o disminuye con 2 botones en el puerto D.
+   Al detectar que el contador del timer0 coincide con el valor del 7-segmentos
+     se hace un toogle a un led en el puerto E
+    */    
 ;   Hardware:
-;
+/*  RB0-    aumentar el valor del 7 segmentos
+    RB1-    disminuir el valor del 7 segmentos
+    RC0-7-  conectado el 7 segmentos de A-G
+    RD0-3-  conectada la salida binaria del contador binario unido al timer0
+    RE0-    conectado el led que hace toogle	
+    */
 ;-------------------------------------------------------------------------------
     
 ;   Librerias utilzadas
@@ -33,7 +45,8 @@ PROCESSOR 16F887
 ;--------------------------Variables a utilizar---------------------------------
 PSECT udata_bank0
 Contador:   DS	1   ;variable del contador
-BandCont:    DS	1   ;variable para el aumento
+BandCont:   DS	1   ;variable para el aumento
+Segmento:   DS	1
     
 ;-------------------------------MACROS------------------------------------------  
 ConfigPines MACRO   ;Configurar pines acorde a su funcionamiento
@@ -52,6 +65,7 @@ ConfigPines MACRO   ;Configurar pines acorde a su funcionamiento
     clrf    PORTD
     clrf    PORTE
     clrf    Contador	;Variable contador en 0
+    clrf    Segmento
     ENDM		;termina el macro
     
 configTimer MACRO   ;Configurar T0 y precargar valor, limpiar bandera
@@ -81,7 +95,31 @@ ORG 0000h
     goto main
     
 ;------------------------Configuracion Microcontrolador-------------------------
-PSECT loopPrincipal, delta=2, class =CODE
+PSECT loopPrincipal, delta=2, class =CODE, abs
+ORG 100h
+    
+tabla:
+    clrf    PCLATH	;Colocar el PCLATH en 01 para seleccionar la
+    BSF	    PCLATH,0	;pagina correcta
+    MOVF    Segmento,W	;mover el valor del segmento a W
+    ADDWF   PCL		;sumar segmento + PCL para seleccionar el valor adecuado
+    retlw   00111111B	;0
+    retlw   00000110B	;1
+    retlw   01011011B	;2
+    retlw   01001111B	;3
+    retlw   01100110B	;4
+    retlw   01101101B	;5
+    retlw   01111101B	;6
+    retlw   00000111B	;7
+    retlw   01111111B	;8
+    retlw   01100111B	;9
+    retlw   01110111B	;A
+    retlw   01111100B	;b
+    retlw   00111001B	;C
+    retlw   01011110B	;d
+    retlw   01111001B	;E
+    retlw   01110001B	;F
+    
 main:
     ConfigPines
     configTimer
@@ -102,19 +140,22 @@ loop:
     BTFSS   RB1			;al dejar de presionar el boton
     call    contAbajo
     ;comprobar si no se pasan del valor, sino regresa el valor a 0
-    BTFSC   PORTC,4
-    clrf    PORTC
+    BTFSC   Segmento,4
+    clrf    Segmento
+    ;Comprueba el valor en la tabla
+    call    tabla
+    MOVWF   PORTC
     goto    loop
-
+    
 contAbajo:
     BTFSC   BandCont,1		;mira si es 1 para disminuir
-    DECF    PORTC		;decrementar el valor del puerto C
+    DECF    Segmento		;decrementar el valor de la tabla
     BCF	    BandCont,1		;coloca en 0 la bandera de Decremento
     return
     
 contArriba:
     BTFSC   BandCont,0		;mira si es 1 para contar
-    INCF    PORTC		;aumenta el valor del puertoC
+    INCF    Segmento		;aumenta el valor del puertoC
     BCF	    BandCont,0		;coloca en 0 la bandera en Aumento
     return
     
@@ -141,8 +182,8 @@ aumentoPortD:
     CLRF    PORTD		
     CLRF    Contador		;el contador regresa a 0
     BCF	    STATUS,2		;en 0 el valor de la bandera de 0
-    MOVF    PORTC,W		;revisa el valor del led
-    XORWF   PORTD,W		;Resta a C el valor de D
+    MOVF    PORTD,W		;revisa el valor del led
+    XORWF   Segmento,W		;XOR a C el valor de Segmento
     BTFSC   STATUS,2		;Revisa si el valor da como resultado 0
     BSF	    BandCont,2		;Activa la 3ra bandera del contador
     BTFSC   BandCont,2		
