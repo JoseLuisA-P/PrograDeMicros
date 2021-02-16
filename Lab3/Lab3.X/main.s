@@ -17,7 +17,7 @@
     RB1-    disminuir el valor del 7 segmentos
     RC0-7-  conectado el 7 segmentos de A-G
     RD0-3-  conectada la salida binaria del contador binario unido al timer0
-    RE0-    conectado el led que hace toogle	
+    RE0-    conectado el led que hace toogle                	
     */
 ;-------------------------------------------------------------------------------
     
@@ -45,8 +45,8 @@ PROCESSOR 16F887
 ;--------------------------Variables a utilizar---------------------------------
 PSECT udata_bank0
 Contador:   DS	1   ;variable del contador
-BandCont:   DS	1   ;variable para el aumento
-Segmento:   DS	1
+BandCont:   DS	1   ;banderas para el aumento
+Segmento:   DS	1   ;valor del 7-segmentos
     
 ;-------------------------------MACROS------------------------------------------  
 ConfigPines MACRO   ;Configurar pines acorde a su funcionamiento
@@ -54,7 +54,7 @@ ConfigPines MACRO   ;Configurar pines acorde a su funcionamiento
     clrf    ANSEL
     clrf    ANSELH
     BANKSEL TRISA	;colocar el puerto B como entrada en primeros 2 pines
-    MOVLW   0xF3	;el resto como salida
+    MOVLW   0x03	;el resto como salida
     MOVWF   TRISB
     clrf    TRISC	;los puertos como salida
     clrf    TRISD
@@ -64,7 +64,7 @@ ConfigPines MACRO   ;Configurar pines acorde a su funcionamiento
     clrf    PORTC
     clrf    PORTD
     clrf    PORTE
-    clrf    Contador	;Variable contador en 0
+    clrf    Contador	;Variable contador y 7-segmentos en 0
     clrf    Segmento
     ENDM		;termina el macro
     
