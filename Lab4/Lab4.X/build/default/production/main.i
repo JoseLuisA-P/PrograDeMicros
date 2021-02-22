@@ -11,6 +11,10 @@
 ; Descripcion:
 
 
+
+
+
+
 ; Hardware:
 
 
@@ -2463,7 +2467,7 @@ stk_offset SET 0
 auto_size SET 0
 ENDM
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.inc" 2 3
-# 18 "main.s" 2
+# 22 "main.s" 2
 
 ;----------------------Bits de configuracion------------------------------------
 ; CONFIG1
@@ -2485,9 +2489,7 @@ ENDM
 ;----------------------------Variables a utilizar-------------------------------
 
 Psect udata_bank0 ;variables almacenadas en el banco 0
-Conbin: DS 1 ;variable del contador binario
 ConTim: DS 1 ;variable del contador del timmer
-Tlow: DS 1 ;intermedio bajo para el timmer 0 (contar hasta 100ms)
 Thigh: DS 1 ;intermedio alto para el timmer 0 (contar hasta 1s)
 
 Psect udata_shr ;variables almacenadas en el banco de memoria compartida
@@ -2515,7 +2517,7 @@ configINT MACRO ;configurar interrupciones
     BANKSEL INTCON
     BSF ((INTCON) and 07Fh), 7 ;habilitar interrupciones
     BSF ((INTCON) and 07Fh), 3 ;habilitar interrupciones de cambio en B
-    ;BSF ((INTCON) and 07Fh), 5 ;habilitar interrupcion del TIMER0
+    BSF ((INTCON) and 07Fh), 5 ;habilitar interrupcion del TIMER0
     BCF ((INTCON) and 07Fh), 2 ;apagar bandera TIMER0
     BCF ((INTCON) and 07Fh), 0 ;apagar bandera de cambios en puerto B
     ENDM
@@ -2533,6 +2535,21 @@ configINTB MACRO ;configurar pullup e interrupciones en B
     ENDM
 
 configOSC MACRO ;configurar el oscilador interno
+    BANKSEL TMR0
+    CLRWDT
+    CLRF TMR0
+    BANKSEL OSCCON ;configurando la frecuencia y fuente del oscilador
+    BSF ((OSCCON) and 07Fh), 6
+    BSF ((OSCCON) and 07Fh), 5
+    BCF ((OSCCON) and 07Fh), 4 ;Frecuencia de 4MHz---110
+    BSF ((OSCCON) and 07Fh), 0 ;utilizar el oscilador interno
+    ;Configurando el prescalador y lafuente
+    BCF OPTION_REG,5 ;TIMER0 usa el reloj interno
+    BCF OPTION_REG,3 ;Prescalador al timmer0
+    BSF ((OPTION_REG) and 07Fh), 2
+    BSF ((OPTION_REG) and 07Fh), 1
+    BCF ((OPTION_REG) and 07Fh), 0 ;Usar prescalador de 128
+    CALL CARGAT0
     ENDM
 ;-------------------------------Vector de reset---------------------------------
 Psect VReset, class = code, delta = 2, abs
@@ -2549,15 +2566,17 @@ push:
 
 pinesB:
     BANKSEL PORTA
-    BTFSC ((INTCON) and 07Fh), 0
+    BTFSC ((INTCON) and 07Fh), 0 ;mira si es interrupcion del puerto B
     CALL contB
+    BTFSC ((INTCON) and 07Fh), 2 ;o si es interrupcion del timer0
+    CALL contT
 
 pop:
     SWAPF W_TEMP, F ;cargar de nuevo el valor de W y STATUS
     MOVWF W_TEMP ;sin modificar las banderas
     SWAPF STATUS_TEMP,W
     MOVF STATUS
-    RETFIE
+    RETFIE ;termina la rutina de interrupcion
 
 contB:
     BTFSS PORTB, 0
@@ -2568,6 +2587,10 @@ contB:
     CALL tablaRB
     RETURN
 
+contT:
+    INCF Thigh
+    CALL CARGAT0
+    RETURN
 ;----------------------------Configuracion del uC-------------------------------
 Psect mainLoop, class = code, delta = 2, abs
 ORG 0100h
@@ -2597,13 +2620,30 @@ tabla:
     configPuertos
     configINT
     configINTB
+    configOSC
+
  loop:
+    BCF STATUS,2 ;limpia el 0
+    MOVLW 200
+    XORWF Thigh, W ;Comprobar si TIMER0 ya conto hasta 1s
+    BTFSC STATUS,2
+    CALL aumentoD ;cambiar el valor de D en la tabla
     GOTO loop
+
+aumentoD:
+    CLRF Thigh ;Reinicia la variable intermedia para contar otro segundo
+    INCF ConTim
+    BTFSC ConTim,4 ;Mira si no cuenta mas de los 4 bits
+    CLRF ConTim
+    MOVF ConTim,W ;carga un valor a W y lo regresa acorde a la tabla
+    CALL tabla
+    MOVWF PORTD
+    RETURN
 
 tablaRB: ;colocar el valor de la tabla en PORTC
     BTFSC PORTA, 4
     CALL LIM
-    MOVF PORTA,W
+    MOVF PORTA,W ;carga un valor en W y lo regresa acorde a la tabla
     CALL tabla
     MOVWF PORTC
     RETURN
@@ -2611,6 +2651,13 @@ tablaRB: ;colocar el valor de la tabla en PORTC
 LIM:
     MOVLW 0X0F ;para evitar que cuente mas de 4 bits
     ANDWF PORTA,F
+    RETURN
+
+CARGAT0:
+    BANKSEL TMR0 ;Precarga el valor de 217 al TM0
+    MOVLW 217
+    MOVWF TMR0
+    BCF INTCON,2 ;Limpiar bandera del TIMER0
     RETURN
 
     END
