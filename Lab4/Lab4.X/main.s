@@ -3,7 +3,7 @@
 ;   Autor: Jose Luis Alvarez Pineda
 ;   Archivo: main.s
 ;   Fecha de creacion: 21 de febrero 2021
-;   modificacion: 
+;   modificacion: 22 de febrero 2021
 ;   Dispositivo: PIC16F887
 ;   Descripcion:
 /* Dos botones en el puerto B los cuales aumentan o disminuyen el valor en el 
@@ -13,8 +13,12 @@
      despliega su valor en un 7 segmentos en el puerto D
     */    
 ;   Hardware:
-/*                  	
-    */
+/*  RB0----	    boton de aumento
+    RB1----	    boton de decremento
+    RA0-3----	    leds que despliegan el valor en binario
+    PUERTO C----    conectado el 7 segmentos manejado por botones 
+    PUERTO D----    conectado el 7 segmentos manejado por el TIMER0
+     */
 ;-------------------------------------------------------------------------------
 
 PROCESSOR 16F887
@@ -131,16 +135,16 @@ pop:
 
 contB:
     BTFSS	PORTB,	0
-    INCF	PORTA
-    BTFSS	PORTB,	1   ;se lee el puerto no hay mismatch
-    DECF	PORTA
+    INCF	PORTA	    ;se compueba si se debe aumentar o disminuir PORTA
+    BTFSS	PORTB,	1   
+    DECF	PORTA	    ;se lee el puerto no hay mismatch
     BCF		INTCON,	0    ;limpiar bandera de RB 
     CALL	tablaRB
     RETURN
 
 contT:
-    INCF    Thigh
-    CALL    CARGAT0
+    INCF    Thigh	;incrementa el valor de la variable intermedia
+    CALL    CARGAT0	;precarga el valor de TIMER0 para contar de nuevo
     RETURN
 ;----------------------------Configuracion del uC-------------------------------
 Psect mainLoop, class = code, delta = 2, abs
@@ -185,7 +189,7 @@ aumentoD:
     CLRF    Thigh   ;Reinicia la variable intermedia para contar otro segundo
     INCF    ConTim
     BTFSC   ConTim,4	;Mira si no cuenta mas de los 4 bits
-    CLRF    ConTim
+    CLRF    ConTim	;sino lo regresa a 0
     MOVF    ConTim,W	;carga un valor a W y lo regresa acorde a la tabla
     CALL    tabla
     MOVWF   PORTD

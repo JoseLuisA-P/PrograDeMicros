@@ -6,7 +6,7 @@
 ; Autor: Jose Luis Alvarez Pineda
 ; Archivo: main.s
 ; Fecha de creacion: 21 de febrero 2021
-; modificacion:
+; modificacion: 22 de febrero 2021
 ; Dispositivo: PIC16F887
 ; Descripcion:
 
@@ -16,6 +16,10 @@
 
 
 ; Hardware:
+
+
+
+
 
 
 ;-------------------------------------------------------------------------------
@@ -2467,7 +2471,7 @@ stk_offset SET 0
 auto_size SET 0
 ENDM
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.inc" 2 3
-# 22 "main.s" 2
+# 26 "main.s" 2
 
 ;----------------------Bits de configuracion------------------------------------
 ; CONFIG1
@@ -2580,16 +2584,16 @@ pop:
 
 contB:
     BTFSS PORTB, 0
-    INCF PORTA
-    BTFSS PORTB, 1 ;se lee el puerto no hay mismatch
-    DECF PORTA
+    INCF PORTA ;se compueba si se debe aumentar o disminuir PORTA
+    BTFSS PORTB, 1
+    DECF PORTA ;se lee el puerto no hay mismatch
     BCF INTCON, 0 ;limpiar bandera de RB
     CALL tablaRB
     RETURN
 
 contT:
-    INCF Thigh
-    CALL CARGAT0
+    INCF Thigh ;incrementa el valor de la variable intermedia
+    CALL CARGAT0 ;precarga el valor de TIMER0 para contar de nuevo
     RETURN
 ;----------------------------Configuracion del uC-------------------------------
 Psect mainLoop, class = code, delta = 2, abs
@@ -2634,7 +2638,7 @@ aumentoD:
     CLRF Thigh ;Reinicia la variable intermedia para contar otro segundo
     INCF ConTim
     BTFSC ConTim,4 ;Mira si no cuenta mas de los 4 bits
-    CLRF ConTim
+    CLRF ConTim ;sino lo regresa a 0
     MOVF ConTim,W ;carga un valor a W y lo regresa acorde a la tabla
     CALL tabla
     MOVWF PORTD
