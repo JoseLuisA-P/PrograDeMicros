@@ -2577,7 +2577,7 @@ pinesB:
 
 pop:
     SWAPF W_TEMP, F ;cargar de nuevo el valor de W y STATUS
-    MOVWF W_TEMP ;sin modificar las banderas
+    SWAPF W_TEMP, W ;sin modificar las banderas
     SWAPF STATUS_TEMP,W
     MOVF STATUS
     RETFIE ;termina la rutina de interrupcion
