@@ -1,0 +1,31 @@
+### HEXMate logfile and output summary ###
+### Memory Usage ###
+ Unused memory ranges:
+  2h - 7h
+  30h - 1FFh
+  2AAh - 400Dh
+  4012h - 403Fh
+  
+ dist/default/debug\Lab5.X.debug.hex ranges:
+  0h - 1h
+  8h - 2Fh
+  200h - 2A9h
+  400Eh - 4011h
+  
+### Hex Memory Map ###
+ Legend:
+  - = Unused memory
+  F = Filled ROM
+  S = Stored serial code
+  A = Stored ASCII string
+  R = Reserved for checksum
+  C = Stored checksum result
+  T = Trailing code
+  & = Find & replace opcode
+  X = Find & delete opcode
+  1 = dist/default/debug\Lab5.X.debug.hex
+00000000: 11------1111111111111111111111111111111111111111----------------
+00000200: 1111111111111111111111111111111111111111111111111111111111111111
+00000240: 1111111111111111111111111111111111111111111111111111111111111111
+00000280: 111111111111111111111111111111111111111111----------------------
+00004000: --------------1111----------------------------------------------
