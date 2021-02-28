@@ -41,6 +41,16 @@ banderas:	DS  1		;0=aumento,1=disminucion,2=timmer
 HEXH:		DS  1		;bits altos del HEX
 HEXL:		DS  1		;bits bajos del HEX
 MUX:		DS  1		;variable para multiplexar los displays
+		;0=hexlow,1=hexhigh,2=u,3=d,4=c
+DIVIDENDO:	DS  1	    ;variable temporal para dividir
+CENTENAS:	DS  1	    ;cuantas centenas compone al numero
+DECENAS:	DS  1	    ;cuantas decenas compone al numero
+UNIDADES:	DS  1	    ;cuantas unidades compone al numero
+
+
+;variables globales
+GLOBAL	DIVIDENDO,CENTENAS,DECENAS,UNIDADES
+  
 ;-------------------------------Macros-----------------------------------------    
 configPuertos	MACRO	    ;configurar los puertos
     BANKSEL	ANSEL
@@ -113,6 +123,7 @@ ORG 0004h
     MOVWF   STATUS_TEMP	
     
     INTT0:
+    BCF	    STATUS,0	;elimina el carry
     BTFSC   T0IF	;mira la si la interrupcion es del timmer0
     RLF	    MUX,F	   ;corre a la izquierda el 1 en el mux
     BTFSC   T0IF	;mira la si la interrupcion es del timmer0
@@ -184,11 +195,20 @@ ORG 0100h
     ANDLW   0X0F	;Se colocan los ultimos 4 en 0
     MOVWF   HEXH	;mueve el nibble alto a HEXH
     ;Rutina multiplexado
-    BTFSC   MUX,2
-    CALL    ARREGLOMUX
+    BTFSC   MUX,5	    ;mira que el mux no se pase de los valores que tiene
+    CALL    ARREGLOMUX	    ;que colocar
     ;Rutina subir los valores del display
     BTFSC   banderas,2	;actualiza los valores cada vez que el mux cambia 
     CALL    MUX7
+    ;rutina para dividir el valor en centenas, decenas y unidades
+    CLRF    CENTENAS
+    CLRF    DECENAS
+    CLRF    UNIDADES
+    MOVF    PORTC,W	;coloca C en W
+    BTFSC   STATUS,2	;si el valor en W es cero, no hace la division
+    GOTO    loop
+    MOVWF   DIVIDENDO	;El valor de C se carga en la variable temporal
+    CALL    DIVISION	;Comienza a hacer la division
     GOTO loop
     
     CARGAT0:
@@ -203,6 +223,12 @@ ORG 0100h
     CALL    CARGARHBAJO	    ;coloca en puerto D el valor de HEX bajo
     BTFSC   MUX,1	    ;revisa si es el bit de hexHigh
     CALL    CARGARHALTA	    ;coloca en puerto D el valor de HEX alto
+    BTFSC   MUX,2	    ;revisa si es el bit de las unidades
+    CALL    CARGARU
+    BTFSC   MUX,3	    ;revisa si es el bit de las decenas
+    CALL    CARGARD
+    BTFSC   MUX,4	    ;revisa si es el bit de las centenas
+    CALL    CARGARC
     BCF	    banderas,2
     RETURN
     
@@ -237,6 +263,62 @@ ORG 0100h
     MOVWF   PORTD	    ;cargar el valor de W extraido de la tabla en D
     MOVF    MUX,W
     MOVWF   PORTA	    ;coloca el valor de muxw en A
+    RETURN
+    
+    CARGARU:
+    CLRF    PORTA	    ;se limpia el puerto
+    MOVF    UNIDADES,W	    ;carga las unidades en W
+    CALL    tabla
+    MOVWF   PORTD	    ;cargar el valor de W extraido de la tabla en D
+    MOVF    MUX,W
+    MOVWF   PORTA	    ;coloca el valor de muxw en A
+    RETURN
+    
+    CARGARD:
+    CLRF    PORTA	    ;se limpia el puerto
+    MOVF    DECENAS,W	    ;carga las DECENAS en W
+    CALL    tabla
+    MOVWF   PORTD	    ;cargar el valor de W extraido de la tabla en D
+    MOVF    MUX,W
+    MOVWF   PORTA	    ;coloca el valor de muxw en A
+    RETURN
+    
+    CARGARC:
+    CLRF    PORTA	    ;se limpia el puerto
+    MOVF    CENTENAS,W	    ;carga las unidades en W
+    CALL    tabla
+    MOVWF   PORTD	    ;cargar el valor de W extraido de la tabla en D
+    MOVF    MUX,W
+    MOVWF   PORTA	    ;coloca el valor de muxw en A
+    RETURN
+    
+    DIVISION:
+    INCF    CENTENAS,F	;incrementa las centenas
+    MOVLW   100		;Carga 100 en W
+    SUBWF   DIVIDENDO,F
+    BTFSC   STATUS,0	;mira si no hay carry luego de la resta
+    goto    $-4
+    CALL    ARRCENT
+    INCF    DECENAS,F
+    MOVLW   10		;se carga 10 en W
+    SUBWF   DIVIDENDO,F	;se le resta 10 a W
+    BTFSC   STATUS,0	;mira si hay carry para ver que no sea negativo
+    goto    $-4		;regresa para incrementar DECENAS y volver a restar
+    CALL    ARRDEC
+    MOVF    DIVIDENDO,W
+    MOVWF   UNIDADES	;Cargar el residuo en unidades
+    RETURN
+    
+    ARRDEC:
+    DECF    DECENAS,F	;Decrementa la cantidad de decenas
+    MOVLW   10
+    ADDWF   DIVIDENDO,F	;suma 10 para regresarlo a ser positivo
+    RETURN
+    
+    ARRCENT:
+    DECF    CENTENAS,F	;Decrementa la cantidad de CENTENAS
+    MOVLW   100
+    ADDWF   DIVIDENDO,F	;suma 100 para regresarlo a ser positivo
     RETURN
     
 END
