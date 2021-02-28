@@ -13,7 +13,7 @@
 %PSECTS
 $build/default/production/main.o
 vectorReset CODE 0 0 0 1 2
-loopPrin code 0 0 0 155 2
+loopPrin code 0 0 0 178 2
 udata_bank0 BANK0 1 20 20 4 1
 vectorINT code 0 0 0 19 2
 udata_shr COMMON 1 70 70 2 1
@@ -32,14 +32,14 @@ BANK0 24-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 155-1FFF 2
-ENTRY 155-1FFF 2
+CONST 178-1FFF 2
+ENTRY 178-1FFF 2
 IDLOC 2000-2003 2
-CODE 155-1FFF 2
+CODE 178-1FFF 2
 COMMON 72-7F 1
 EEDATA 2100-21FF 2
-STRCODE 155-1FFF 2
-STRING 155-1FFF 2
+STRCODE 178-1FFF 2
+STRING 178-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -54,73 +54,111 @@ STRING 155-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/production/main.o
-0 loopPrin code >142:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+0 loopPrin code >141:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+100 loopPrin code >143:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 100 loopPrin code >144:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-100 loopPrin code >145:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-113 loopPrin code >146:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-11A loopPrin code >147:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-125 loopPrin code >148:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-135 loopPrin code >150:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-135 loopPrin code >152:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-137 loopPrin code >153:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-138 loopPrin code >154:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-139 loopPrin code >155:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-13A loopPrin code >156:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-13B loopPrin code >158:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-13C loopPrin code >159:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-13D loopPrin code >160:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-13E loopPrin code >161:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-13F loopPrin code >162:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-140 loopPrin code >163:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-141 loopPrin code >165:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-142 loopPrin code >166:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-143 loopPrin code >167:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-144 loopPrin code >168:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-145 loopPrin code >169:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-146 loopPrin code >171:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-146 loopPrin code >172:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-147 loopPrin code >173:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-148 loopPrin code >174:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-149 loopPrin code >176:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-149 loopPrin code >177:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14A loopPrin code >178:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14B loopPrin code >179:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14C loopPrin code >181:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14C loopPrin code >182:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14D loopPrin code >183:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14E loopPrin code >184:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14F loopPrin code >186:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14F loopPrin code >187:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-151 loopPrin code >188:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-152 loopPrin code >189:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-153 loopPrin code >190:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-154 loopPrin code >191:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+101 loopPrin code >145:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+102 loopPrin code >146:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+103 loopPrin code >147:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+104 loopPrin code >148:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+105 loopPrin code >149:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+106 loopPrin code >150:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+107 loopPrin code >151:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+108 loopPrin code >152:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+109 loopPrin code >153:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+10A loopPrin code >154:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+10B loopPrin code >155:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+10C loopPrin code >156:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+10D loopPrin code >157:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+10E loopPrin code >158:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+10F loopPrin code >159:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+110 loopPrin code >160:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+111 loopPrin code >161:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+112 loopPrin code >162:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+113 loopPrin code >164:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+113 loopPrin code >165:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+126 loopPrin code >166:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+12D loopPrin code >167:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+138 loopPrin code >168:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+148 loopPrin code >170:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+148 loopPrin code >172:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+14A loopPrin code >173:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+14B loopPrin code >174:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+14C loopPrin code >175:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+14D loopPrin code >176:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+14E loopPrin code >178:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+14F loopPrin code >179:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+150 loopPrin code >180:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+151 loopPrin code >181:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+152 loopPrin code >182:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+153 loopPrin code >183:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+154 loopPrin code >185:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+155 loopPrin code >186:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+156 loopPrin code >188:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+157 loopPrin code >189:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+158 loopPrin code >190:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+159 loopPrin code >191:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+15A loopPrin code >192:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+15B loopPrin code >194:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+15B loopPrin code >195:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+15D loopPrin code >196:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+15E loopPrin code >197:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+15F loopPrin code >198:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+160 loopPrin code >199:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+161 loopPrin code >201:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+161 loopPrin code >202:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+162 loopPrin code >203:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+163 loopPrin code >204:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+164 loopPrin code >206:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+164 loopPrin code >207:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+165 loopPrin code >208:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+166 loopPrin code >209:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+167 loopPrin code >211:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+167 loopPrin code >212:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+168 loopPrin code >213:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+169 loopPrin code >214:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+16A loopPrin code >216:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+16A loopPrin code >217:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+16B loopPrin code >218:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+16C loopPrin code >219:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+16D loopPrin code >220:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+16E loopPrin code >221:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+16F loopPrin code >222:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+170 loopPrin code >223:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+171 loopPrin code >225:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+171 loopPrin code >226:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+172 loopPrin code >227:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+173 loopPrin code >228:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+174 loopPrin code >229:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+175 loopPrin code >230:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+176 loopPrin code >231:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+177 loopPrin code >232:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 0 vectorINT code >109:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 4 vectorINT code >110:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 4 vectorINT code >111:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 5 vectorINT code >112:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 6 vectorINT code >113:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+7 vectorINT code >115:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 7 vectorINT code >116:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-7 vectorINT code >117:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-8 vectorINT code >118:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-9 vectorINT code >119:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+8 vectorINT code >117:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+9 vectorINT code >118:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+A vectorINT code >120:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 A vectorINT code >121:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-A vectorINT code >122:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-C vectorINT code >123:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-D vectorINT code >124:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+C vectorINT code >122:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+D vectorINT code >123:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+E vectorINT code >125:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 E vectorINT code >126:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-E vectorINT code >127:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-F vectorINT code >128:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-10 vectorINT code >129:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-11 vectorINT code >130:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-12 vectorINT code >131:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+F vectorINT code >127:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+10 vectorINT code >128:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+11 vectorINT code >129:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+12 vectorINT code >130:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+13 vectorINT code >132:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 13 vectorINT code >133:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-13 vectorINT code >134:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-14 vectorINT code >135:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-15 vectorINT code >136:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-16 vectorINT code >137:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-17 vectorINT code >138:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
-18 vectorINT code >139:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+14 vectorINT code >134:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+15 vectorINT code >135:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+16 vectorINT code >136:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+17 vectorINT code >137:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
+18 vectorINT code >138:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 0 vectorReset CODE >105:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 0 vectorReset CODE >106:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab5\Lab5.X\main.s
 # %SYMTAB Section
@@ -135,7 +173,7 @@ F vectorINT code >128:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 155 0 ABS 0 - -
+__Hspace_0 178 0 ABS 0 - -
 __Hspace_1 72 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
@@ -162,7 +200,7 @@ __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__HloopPrin 2AA 0 code 0 loopPrin -
+__HloopPrin 2F0 0 code 0 loopPrin -
 __Ludata_bank0 0 0 ABS 0 udata_bank0 -
 __Ludata_bank1 0 0 ABS 0 udata_bank1 -
 __Ludata_bank2 0 0 ABS 0 udata_bank2 -

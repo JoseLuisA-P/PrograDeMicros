@@ -96,7 +96,7 @@ configOSC	MACRO	;configurar el oscilador interno
     BCF	    OPTION_REG,3    ;Prescalador al timmer0
     BSF	    PS2
     BSF	    PS1
-    BCF	    PS0	    ;Usar prescalador de 128
+    BSF	    PS0	    ;Usar prescalador de 256
     CALL    CARGAT0
     ENDM    
     
@@ -112,7 +112,6 @@ ORG 0004h
     SWAPF   STATUS,W	    ;sin alterar sus banderas
     MOVWF   STATUS_TEMP	
     
-    
     INTT0:
     BTFSC   T0IF	;mira la si la interrupcion es del timmer0
     RLF	    MUX,F
@@ -124,10 +123,10 @@ ORG 0004h
     CALL    PUSHES
     
     pop:
-    SWAPF	W_TEMP, F	    ;cargar de nuevo el valor de W y STATUS
-    SWAPF	W_TEMP,	W	    ;sin modificar las banderas
-    SWAPF	STATUS_TEMP,W
-    MOVF	STATUS
+    SWAPF   STATUS_TEMP,W
+    MOVWF   STATUS
+    SWAPF   W_TEMP,F
+    SWAPF   W_TEMP,W
     RETFIE			;termina la rutina de interrupcion
     
     PUSHES:
@@ -140,6 +139,27 @@ ORG 0004h
     
 Psect	loopPrin, class = code, delta = 2, abs
 ORG 0100h
+ 
+    tabla:
+    CLRF    PCLATH	;Colocar el PCLATH en 01 para seleccionar la
+    BSF	    PCLATH,0	;pagina correcta
+    ADDWF   PCL		;sumar segmento + PCL para seleccionar el valor adecuado
+    retlw   00111111B	;0
+    retlw   00000110B	;1
+    retlw   01011011B	;2
+    retlw   01001111B	;3
+    retlw   01100110B	;4
+    retlw   01101101B	;5
+    retlw   01111101B	;6
+    retlw   00000111B	;7
+    retlw   01111111B	;8
+    retlw   01100111B	;9
+    retlw   01110111B	;A
+    retlw   01111100B	;b
+    retlw   00111001B	;C
+    retlw   01011110B	;d
+    retlw   01111001B	;E
+    retlw   01110001B	;F 
  
     main:
     configPuertos
@@ -164,12 +184,22 @@ ORG 0100h
     ;Rutina multiplexado
     BTFSC   MUX,2
     CALL    ARREGLOMUX
-    MOVF    MUX,W
-    MOVWF   PORTA
+    ;Rutina subir los valores del display
+    BTFSC   MUX,0
+    CALL    CARGARHBAJO
+    BTFSC   MUX,1
+    CALL    CARGARHALTA
     GOTO loop
     
+    CARGAT0:
+    BANKSEL TMR0    ;Precarga el valor de 217 al TM0
+    MOVLW   217
+    MOVWF   TMR0
+    BCF	    INTCON,2	;Limpiar bandera del TIMER0
+    RETURN
+    
     ARREGLOMUX:	    ;coloca la posicion del mux de nuevo en la priemra
-    CLRF    MUX	
+    CLRF    MUX	    ;coloca en 0 el MUX y luego carga el primer bit de nuevo
     BSF	    MUX,0
     RETURN
     
@@ -182,12 +212,23 @@ ORG 0100h
     DECF    PORTC	;disminuye el valor de C
     BCF	    banderas,1	;limpia la bandera de disminucion de banderas
     RETURN
-
-    CARGAT0:
-    BANKSEL TMR0    ;Precarga el valor de 217 al TM0
-    MOVLW   217
-    MOVWF   TMR0
-    BCF	    INTCON,2	;Limpiar bandera del TIMER0
+    
+    CARGARHBAJO:
+    CLRF    PORTA	    ;se limpia el puerto
+    MOVF    HEXL,W	    ;carga los nibble bajos en w
+    CALL    tabla
+    MOVWF   PORTD	    ;cargar el valor de W extraido de la tabla en D
+    MOVF    MUX,W
+    MOVWF   PORTA	    ;coloca el valor de muxw en A
+    RETURN
+    
+    CARGARHALTA:
+    CLRF    PORTA	    ;se limpia el puerto
+    MOVF    HEXH,W	    ;carga los nibble altos en w
+    CALL    tabla
+    MOVWF   PORTD	    ;cargar el valor de W extraido de la tabla en D
+    MOVF    MUX,W
+    MOVWF   PORTA	    ;coloca el valor de muxw en A
     RETURN
     
 END
