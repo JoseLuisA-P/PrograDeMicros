@@ -2545,7 +2545,7 @@ configOSC MACRO ;configurar el oscilador interno
     BCF OPTION_REG,3 ;Prescalador al timmer0
     BSF ((OPTION_REG) and 07Fh), 2
     BSF ((OPTION_REG) and 07Fh), 1
-    BSF ((OPTION_REG) and 07Fh), 0 ;Usar prescalador de 256
+    BCF ((OPTION_REG) and 07Fh), 0 ;Usar prescalador de 128
     CALL CARGAT0
     ENDM
 
@@ -2563,7 +2563,9 @@ ORG 0004h
 
     INTT0:
     BTFSC ((INTCON) and 07Fh), 2 ;mira la si la interrupcion es del timmer0
-    RLF MUX,F
+    RLF MUX,F ;corre a la izquierda el 1 en el mux
+    BTFSC ((INTCON) and 07Fh), 2 ;mira la si la interrupcion es del timmer0
+    BSF banderas,2
     BCF ((INTCON) and 07Fh), 2
 
     INTRB:
@@ -2634,10 +2636,8 @@ ORG 0100h
     BTFSC MUX,2
     CALL ARREGLOMUX
     ;Rutina subir los valores del display
-    BTFSC MUX,0
-    CALL CARGARHBAJO
-    BTFSC MUX,1
-    CALL CARGARHALTA
+    BTFSC banderas,2 ;actualiza los valores cada vez que el mux cambia
+    CALL MUX7
     GOTO loop
 
     CARGAT0:
@@ -2645,6 +2645,14 @@ ORG 0100h
     MOVLW 217
     MOVWF TMR0
     BCF INTCON,2 ;Limpiar bandera del TIMER0
+    RETURN
+
+    MUX7:
+    BTFSC MUX,0 ;revisa si es el bit de hexLow
+    CALL CARGARHBAJO ;coloca en puerto D el valor de HEX bajo
+    BTFSC MUX,1 ;revisa si es el bit de hexHigh
+    CALL CARGARHALTA ;coloca en puerto D el valor de HEX alto
+    BCF banderas,2
     RETURN
 
     ARREGLOMUX: ;coloca la posicion del mux de nuevo en la priemra
