@@ -209,7 +209,7 @@ ORG 0100h
     GOTO    loop
     MOVWF   DIVIDENDO	;El valor de C se carga en la variable temporal
     CALL    DIVISION	;Comienza a hacer la division
-    GOTO loop
+    GOTO    loop
     
     CARGAT0:
     BANKSEL TMR0    ;Precarga el valor de 217 al TM0
