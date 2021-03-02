@@ -11,9 +11,11 @@
 ; Descripcion:
 
 
+
+
+
 ; Hardware:
-
-
+# 30 "main.s"
 ;-------------------------------------------------------------------------------
 PROCESSOR 16F887
 
@@ -2462,7 +2464,7 @@ stk_offset SET 0
 auto_size SET 0
 ENDM
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.inc" 2 3
-# 17 "main.s" 2
+# 33 "main.s" 2
 
 ; CONFIG1
   CONFIG FOSC = INTRC_NOCLKOUT ; Oscillator Selection bits (INTOSCIO oscillator: I/O function on ((PORTA) and 07Fh), 6/OSC2/CLKOUT pin, I/O function on ((PORTA) and 07Fh), 7/OSC1/CLKIN)
@@ -2553,9 +2555,9 @@ configOSC MACRO ;configurar el oscilador interno
     ;Configurando el prescalador y lafuente
     BCF OPTION_REG,5 ;TIMER0 usa el reloj interno
     BCF OPTION_REG,3 ;Prescalador al timmer0
-    BSF ((OPTION_REG) and 07Fh), 2
+    BCF ((OPTION_REG) and 07Fh), 2
     BSF ((OPTION_REG) and 07Fh), 1
-    BCF ((OPTION_REG) and 07Fh), 0 ;Usar prescalador de 128
+    BSF ((OPTION_REG) and 07Fh), 0 ;Usar prescalador de 16
     CALL CARGAT0
     ENDM
 

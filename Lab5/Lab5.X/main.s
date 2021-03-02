@@ -6,10 +6,26 @@
 ;   modificacion: 22 de febrero 2021
 ;   Dispositivo: PIC16F887
 ;   Descripcion:
-/* 
+/* Con 2 botones se aumenta o disminuye un numero el cual se muestra por medio
+   de 8 bits en un puerto del PIC. Con otros 2 puertos se multiplexan 5 displays
+   para mostrar los valores en hexadecimal y decimal(por medio de division) del 
+   numero que aumenta o disminuye con los botones.
     */    
 ;   Hardware:
-/*  
+/*  RB0: boton de aumento
+    RB1: boton de decremento
+   
+    Puerto A utilizado para multiplexar:
+    RA0: activa el display del hexadecimal bajo
+    RA1: activa el display del hexadecimal alto
+    RA2: activa el display de la unidad
+    RA3: activa el display de la decena
+    RA4; activa el display de la centena
+   
+    Puerto D utilizado para darle el valor a los displays
+    del pin 0 al 7 salen las señales de la A a la G de los displays.
+     
+    RE3: MCLR
      */
 ;-------------------------------------------------------------------------------
 PROCESSOR 16F887
@@ -104,9 +120,9 @@ configOSC	MACRO	;configurar el oscilador interno
     ;Configurando el prescalador y lafuente
     BCF	    OPTION_REG,5    ;TIMER0 usa el reloj interno
     BCF	    OPTION_REG,3    ;Prescalador al timmer0
-    BSF	    PS2
+    BCF	    PS2
     BSF	    PS1
-    BCF	    PS0	    ;Usar prescalador de 128
+    BSF	    PS0	    ;Usar prescalador de 16
     CALL    CARGAT0
     ENDM    
     
