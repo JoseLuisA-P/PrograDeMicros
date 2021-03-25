@@ -41,7 +41,9 @@ BANDERAS:	DS  1
 CONTEO:		DS  1
 TIM1:		DS  1
 TIM2:		DS  1
-    
+DECENAS:	DS  1
+UNIDADES:	DS  1
+DIVIDENDO:	DS  1
 GLOBAL	    TIM1
 ;----------------------------------MACROS---------------------------------------
 configPuertos	MACRO	    ;configurar los puertos
@@ -124,7 +126,6 @@ ORG 0004h
     
     T1RUT:
     INCF    TIM1	    ;aumenta el valor de TIM1
-    BANKSEL PIR1
     BCF	    TMR1IF	    ;Apaga la bandera
     CALL    CARGAT1	    ;Precarga el valor de T1
     GOTO    pop
@@ -169,14 +170,13 @@ ORG 0100h
     loop:
     BTFSC   BANDERAS,0
     CALL    MUX
-    BCF	    BANDERAS,0
     BCF	    STATUS,2
     MOVLW   2
     XORWF   TIM1,W
     BTFSC   STATUS,2	;mira si timmer1 ya conto 1 segundo
     CALL    INCREMENTO
-    MOVF    CONTEO,W
-    MOVWF   PORTC
+    BTFSC   BANDERAS,0
+    CALL    MULTIPLEX	;multiplexar
     GOTO    loop
     
     CARGAT0:
@@ -200,11 +200,38 @@ ORG 0100h
     RETURN
     
     MUX:
-    ;BCF	    BANDERAS,0	    ;Apaga la bandera
+    ;BCF	BANDERAS,0	    
     BCF	    STATUS,0	    ;Elimina el carry
     RLF	    PORTD	    ;rota a la izquierda y lo coloca en 1 si se paso
     BTFSS   PORTD,2	    ;a la 3ra posicion
     GOTO    $+3
     CLRF    PORTD
     BSF	    PORTD,0
+    RETURN
+
+    
+    MULTIPLEX:
+    BCF	    BANDERAS,0
+    BTFSC   PORTD,0
+    CALL    LDEC
+    BTFSC   PORTD,1
+    CALL    LUNI
+    RETURN
+    
+    LDEC:
+    CLRF    PORTD
+    MOVF    CONTEO,W
+    ANDLW   0Fh
+    CALL    tabla
+    MOVWF   PORTC
+    BSF	    PORTD,0
+    RETURN
+    
+    LUNI:
+    CLRF    PORTD
+    SWAPF   CONTEO,W
+    ANDLW   0Fh
+    CALL    tabla
+    MOVWF   PORTC
+    BSF	    PORTD,1
     RETURN
