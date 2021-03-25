@@ -38,9 +38,11 @@ STATUS_TEMP:	DS  1
     
 Psect	udata_bank0		;variables para los timmers
 BANDERAS:	DS  1
-TIM0:		DS  1
+CONTEO:		DS  1
 TIM1:		DS  1
 TIM2:		DS  1
+    
+GLOBAL	    TIM1
 ;----------------------------------MACROS---------------------------------------
 configPuertos	MACRO	    ;configurar los puertos
     BANKSEL	ANSEL
@@ -55,13 +57,28 @@ configPuertos	MACRO	    ;configurar los puertos
     CLRF	PORTD
     CLRF	PORTE
     BSF		PORTD,0	    ;enciende el primer bit
+    CLRF	CONTEO
     ENDM
 
 configINT	MACRO	;configurar interrupciones
     BANKSEL	INTCON
     BSF		GIE	;habilitar interrupciones
+    BSF		PEIE
     BSF		T0IE	;habilitar interrupcion del TIMER0
     BCF		T0IF	;apagar bandera TIMER0   
+    ;configurando interrupciones del timmer1 y 2
+    BANKSEL	PIE1
+    BSF		TMR1IE	;habilita la interrupcion del timmer 1
+    BANKSEL	PIR1
+    BCF		TMR1IF
+    ENDM
+
+configTIM1	MACRO
+    BANKSEL	T1CON
+    BSF		T1CKPS1
+    BSF		T1CKPS0	    ;pre en 8
+    BSF		TMR1ON
+    CALL	CARGAT1	    ;carga T1 con 3035, para que cuentre cada 0.5 Seg
     ENDM
     
 configOSC	MACRO	;configurar el oscilador interno
@@ -96,11 +113,20 @@ ORG 0004h
     
     BTFSC   T0IF
     GOTO    T0RUT
+    BTFSC   TMR1IF
+    GOTO    T1RUT
     
     T0RUT:
     BSF	    BANDERAS,0	    ;Bandera timmer0, cada 1.25 mS
     BCF	    T0IF	    ;apaga la bandera 
     CALL    CARGAT0	    ;carga el valor de T0
+    GOTO    pop
+    
+    T1RUT:
+    INCF    TIM1	    ;aumenta el valor de TIM1
+    BANKSEL PIR1
+    BCF	    TMR1IF	    ;Apaga la bandera
+    CALL    CARGAT1	    ;Precarga el valor de T1
     GOTO    pop
     
     pop:
@@ -137,12 +163,20 @@ ORG 0100h
     main:
     configPuertos
     configINT
+    configTIM1
     configOSC
     
     loop:
     BTFSC   BANDERAS,0
     CALL    MUX
     BCF	    BANDERAS,0
+    BCF	    STATUS,2
+    MOVLW   2
+    XORWF   TIM1,W
+    BTFSC   STATUS,2	;mira si timmer1 ya conto 1 segundo
+    CALL    INCREMENTO
+    MOVF    CONTEO,W
+    MOVWF   PORTC
     GOTO    loop
     
     CARGAT0:
@@ -150,6 +184,19 @@ ORG 0100h
     MOVLW   217
     MOVWF   TMR0
     BCF	    INTCON,2	;Limpiar bandera del TIMER0
+    RETURN
+    
+    CARGAT1:
+    BANKSEL PORTA	;selecciona el banco del timmer 1 H y L
+    MOVLW   11011011B
+    MOVWF   TMR1L
+    MOVLW   00001011B
+    MOVWF   TMR1H
+    RETURN
+    
+    INCREMENTO:
+    INCF    CONTEO
+    CLRF    TIM1
     RETURN
     
     MUX:
