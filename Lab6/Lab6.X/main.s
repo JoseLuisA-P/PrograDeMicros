@@ -6,10 +6,15 @@
 ;   modificacion: 25 de marzo 2021
 ;   Dispositivo: PIC16F887
 ;   Descripcion:
-/* 
+/*  El timer 0 se utiliza para multiplexar dos displays. El timer 1 hace que una
+    variable cuente a cada segundo y con el multiplexado del timer 0 se
+    despliega en los displays. El timer 2 hace que tanto los displays como un 
+    led cambien de estado cada 0.25 segundos.
     */    
 ;   Hardware:
-/*  
+/*  En el puerto C se tiene conectado las terminales del display
+    En el puerto D0 y D1 los pines que multiplexan los display
+    En el puerto E0 se tiene el led que cambia de estado.
      */
 ;-------------------------------------------------------------------------------
 PROCESSOR   16F887
@@ -201,7 +206,7 @@ ORG 0100h
     BCF	    STATUS,2
     MOVLW   10
     XORWF   TIM2,W
-    BTFSC   STATUS,2	;mira si timmer2 ya conto 1 segundo
+    BTFSC   STATUS,2	;mira si timmer2 ya conto 0.25 segundo
     CALL    TOOGLE
     BTFSC   PORTE,0
     GOTO    $+3

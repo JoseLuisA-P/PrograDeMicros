@@ -11,7 +11,12 @@
 ; Descripcion:
 
 
+
+
+
 ; Hardware:
+
+
 
 
 ;-------------------------------------------------------------------------------
@@ -2462,7 +2467,7 @@ stk_offset SET 0
 auto_size SET 0
 ENDM
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.inc" 2 3
-# 17 "main.s" 2
+# 22 "main.s" 2
 
 ; CONFIG1
   CONFIG FOSC = INTRC_NOCLKOUT ; Oscillator Selection bits (INTOSCIO oscillator: I/O function on ((PORTA) and 07Fh), 6/OSC2/CLKOUT pin, I/O function on ((PORTA) and 07Fh), 7/OSC1/CLKIN)
@@ -2650,7 +2655,7 @@ ORG 0100h
     BCF STATUS,2
     MOVLW 10
     XORWF TIM2,W
-    BTFSC STATUS,2 ;mira si timmer2 ya conto 1 segundo
+    BTFSC STATUS,2 ;mira si timmer2 ya conto 0.25 segundo
     CALL TOOGLE
     BTFSC PORTE,0
     GOTO $+3
