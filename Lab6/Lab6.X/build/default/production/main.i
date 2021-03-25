@@ -2490,10 +2490,7 @@ BANDERAS: DS 1
 CONTEO: DS 1
 TIM1: DS 1
 TIM2: DS 1
-DECENAS: DS 1
-UNIDADES: DS 1
-DIVIDENDO: DS 1
-GLOBAL TIM1
+
 ;----------------------------------MACROS---------------------------------------
 configPuertos MACRO ;configurar los puertos
     BANKSEL ANSEL
@@ -2520,8 +2517,10 @@ configINT MACRO ;configurar interrupciones
     ;configurando interrupciones del timmer1 y 2
     BANKSEL PIE1
     BSF ((PIE1) and 07Fh), 0 ;habilita la interrupcion del timmer 1
+    BSF ((PIE1) and 07Fh), 1 ;habilita la interrucion del timmer 2
     BANKSEL PIR1
     BCF ((PIR1) and 07Fh), 0
+    BCF ((PIR1) and 07Fh), 1
     ENDM
 
 configTIM1 MACRO
@@ -2530,6 +2529,21 @@ configTIM1 MACRO
     BSF ((T1CON) and 07Fh), 4 ;pre en 8
     BSF ((T1CON) and 07Fh), 0
     CALL CARGAT1 ;carga T1 con 3035, para que cuentre cada 0.5 Seg
+    ENDM
+
+configTIM2 MACRO
+    BANKSEL PR2
+    MOVLW 104
+    MOVWF PR2 ;coloca el periodo en 104 y da como resultado 25mS
+    BANKSEL T2CON
+    CLRF TMR2
+    BSF ((T2CON) and 07Fh), 6
+    BSF ((T2CON) and 07Fh), 5
+    BSF ((T2CON) and 07Fh), 4
+    BCF ((T2CON) and 07Fh), 3 ;POST en 15
+    BSF ((T2CON) and 07Fh), 2 ;enciende el timmer
+    BSF ((T2CON) and 07Fh), 1 ;pre en 16
+    BSF ((T2CON) and 07Fh), 0
     ENDM
 
 configOSC MACRO ;configurar el oscilador interno
@@ -2566,6 +2580,9 @@ ORG 0004h
     GOTO T0RUT
     BTFSC ((PIR1) and 07Fh), 0
     GOTO T1RUT
+    BTFSC ((PIR1) and 07Fh), 1
+    GOTO T2RUT
+    GOTO pop
 
     T0RUT:
     BSF BANDERAS,0 ;Bandera timmer0, cada 1.25 mS
@@ -2577,6 +2594,11 @@ ORG 0004h
     INCF TIM1 ;aumenta el valor de TIM1
     BCF ((PIR1) and 07Fh), 0 ;Apaga la bandera
     CALL CARGAT1 ;Precarga el valor de T1
+    GOTO pop
+
+    T2RUT:
+    INCF TIM2
+    BCF ((PIR1) and 07Fh), 1
     GOTO pop
 
     pop:
@@ -2614,6 +2636,7 @@ ORG 0100h
     configPuertos
     configINT
     configTIM1
+    configTIM2
     configOSC
 
     loop:
@@ -2624,9 +2647,18 @@ ORG 0100h
     XORWF TIM1,W
     BTFSC STATUS,2 ;mira si timmer1 ya conto 1 segundo
     CALL INCREMENTO
-    BTFSC BANDERAS,0
+    BCF STATUS,2
+    MOVLW 10
+    XORWF TIM2,W
+    BTFSC STATUS,2 ;mira si timmer2 ya conto 1 segundo
+    CALL TOOGLE
+    BTFSC PORTE,0
+    GOTO $+3
+    CLRF PORTC
+    GOTO loop
     CALL MULTIPLEX ;multiplexar
     GOTO loop
+
 
     CARGAT0:
     BANKSEL TMR0 ;Precarga el valor de 217 al TM0
@@ -2649,7 +2681,6 @@ ORG 0100h
     RETURN
 
     MUX:
-    ;BCF BANDERAS,0
     BCF STATUS,0 ;Elimina el carry
     RLF PORTD ;rota a la izquierda y lo coloca en 1 si se paso
     BTFSS PORTD,2 ;a la 3ra posicion
@@ -2683,4 +2714,13 @@ ORG 0100h
     CALL tabla
     MOVWF PORTC
     BSF PORTD,1
+    RETURN
+
+    TOOGLE:
+    CLRF TIM2
+    BTFSS PORTE,0
+    GOTO $+3
+    BCF PORTE,0
+    RETURN
+    BSF PORTE,0
     RETURN
