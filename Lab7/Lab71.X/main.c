@@ -130,7 +130,7 @@ void configuracion(void){
 }
 
 void multiplexado(uint8_t val){
-    switch(val){
+    switch(val){    //depende el valor asi le asigna al puerto D
         case 0:
         PORTD = 0b00111111;	break;//0
         case 1:
@@ -158,6 +158,10 @@ void multiplexado(uint8_t val){
 
 void division(uint8_t* un,uint8_t* dec,uint8_t* cent){
     uint8_t div = PORTA;
+    *un =   0;
+    *dec =  0;
+    *cent = 0;
+    //modifica los valores de las variables asignadas de forma inmediata
     
     while(div >= 100){
     *cent = div/100;

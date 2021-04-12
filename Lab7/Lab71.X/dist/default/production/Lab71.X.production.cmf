@@ -13,20 +13,20 @@
 %PSECTS
 $dist/default/production\Lab71.X.production.o
 cinit CODE 0 F F D 2
-text1 CODE 0 159 159 5D 2
-text2 CODE 0 1C 1C 70 2
-text3 CODE 0 21E 21E 15 2
-text4 CODE 0 8C 8C 69 2
-text5 CODE 0 1EF 1EF 2F 2
-text6 CODE 0 1B6 1B6 39 2
-maintext CODE 0 F5 F5 64 2
+text1 CODE 0 162 162 5D 2
+text2 CODE 0 1C 1C 79 2
+text3 CODE 0 227 227 15 2
+text4 CODE 0 95 95 69 2
+text5 CODE 0 1F8 1F8 2F 2
+text6 CODE 0 1BF 1BF 39 2
+maintext CODE 0 FE FE 64 2
 cstackCOMMON COMMON 1 70 70 7 1
 cstackBANK0 BANK0 1 20 20 E 1
 intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 2E 2E 3 1
 bssCOMMON COMMON 1 77 77 4 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\jalva\AppData\Local\Temp\s9po.o
+$C:\Users\jalva\AppData\Local\Temp\smak.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -45,13 +45,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 233-1FFF 2
+CONST 23C-1FFF 2
 ENTRY 3-3 2
-ENTRY 233-1FFF 2
+ENTRY 23C-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 233-1FFF 2
+CODE 23C-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -59,9 +59,9 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 233-1FFF 2
+STRCODE 23C-1FFF 2
 STRING 3-3 2
-STRING 233-1FFF 2
+STRING 23C-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -76,149 +76,152 @@ STRING 233-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab71.X.production.o
-F cinit CODE >471:C:\Users\jalva\AppData\Local\Temp\s9po.s
-F cinit CODE >474:C:\Users\jalva\AppData\Local\Temp\s9po.s
-F cinit CODE >503:C:\Users\jalva\AppData\Local\Temp\s9po.s
-10 cinit CODE >504:C:\Users\jalva\AppData\Local\Temp\s9po.s
-11 cinit CODE >505:C:\Users\jalva\AppData\Local\Temp\s9po.s
-12 cinit CODE >506:C:\Users\jalva\AppData\Local\Temp\s9po.s
-13 cinit CODE >509:C:\Users\jalva\AppData\Local\Temp\s9po.s
-14 cinit CODE >510:C:\Users\jalva\AppData\Local\Temp\s9po.s
-15 cinit CODE >511:C:\Users\jalva\AppData\Local\Temp\s9po.s
-16 cinit CODE >512:C:\Users\jalva\AppData\Local\Temp\s9po.s
-17 cinit CODE >513:C:\Users\jalva\AppData\Local\Temp\s9po.s
-18 cinit CODE >519:C:\Users\jalva\AppData\Local\Temp\s9po.s
-18 cinit CODE >521:C:\Users\jalva\AppData\Local\Temp\s9po.s
-19 cinit CODE >522:C:\Users\jalva\AppData\Local\Temp\s9po.s
+F cinit CODE >471:C:\Users\jalva\AppData\Local\Temp\smak.s
+F cinit CODE >474:C:\Users\jalva\AppData\Local\Temp\smak.s
+F cinit CODE >503:C:\Users\jalva\AppData\Local\Temp\smak.s
+10 cinit CODE >504:C:\Users\jalva\AppData\Local\Temp\smak.s
+11 cinit CODE >505:C:\Users\jalva\AppData\Local\Temp\smak.s
+12 cinit CODE >506:C:\Users\jalva\AppData\Local\Temp\smak.s
+13 cinit CODE >509:C:\Users\jalva\AppData\Local\Temp\smak.s
+14 cinit CODE >510:C:\Users\jalva\AppData\Local\Temp\smak.s
+15 cinit CODE >511:C:\Users\jalva\AppData\Local\Temp\smak.s
+16 cinit CODE >512:C:\Users\jalva\AppData\Local\Temp\smak.s
+17 cinit CODE >513:C:\Users\jalva\AppData\Local\Temp\smak.s
+18 cinit CODE >519:C:\Users\jalva\AppData\Local\Temp\smak.s
+18 cinit CODE >521:C:\Users\jalva\AppData\Local\Temp\smak.s
+19 cinit CODE >522:C:\Users\jalva\AppData\Local\Temp\smak.s
 4 intentry CODE >40:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1B6 text6 CODE >40:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1B6 text6 CODE >41:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1C0 text6 CODE >42:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1C4 text6 CODE >43:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1C6 text6 CODE >44:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1C7 text6 CODE >46:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1D1 text6 CODE >47:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1D3 text6 CODE >48:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1D5 text6 CODE >49:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1D6 text6 CODE >51:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1DA text6 CODE >53:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1DE text6 CODE >54:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1E4 text6 CODE >55:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1E5 text6 CODE >56:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1E7 text6 CODE >58:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1E8 text6 CODE >59:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1EF text5 CODE >93:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1EF text5 CODE >95:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1F2 text5 CODE >96:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1F3 text5 CODE >97:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1F6 text5 CODE >98:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1F8 text5 CODE >99:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1F9 text5 CODE >100:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1FA text5 CODE >101:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1FD text5 CODE >102:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1FE text5 CODE >103:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1FF text5 CODE >106:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-200 text5 CODE >107:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-201 text5 CODE >108:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-203 text5 CODE >109:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-204 text5 CODE >110:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-205 text5 CODE >111:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-206 text5 CODE >112:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-208 text5 CODE >114:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-20B text5 CODE >115:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-20C text5 CODE >116:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-20D text5 CODE >117:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-20E text5 CODE >118:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-20F text5 CODE >119:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-213 text5 CODE >120:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-214 text5 CODE >121:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-215 text5 CODE >123:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-218 text5 CODE >124:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-219 text5 CODE >125:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-21A text5 CODE >126:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-21B text5 CODE >127:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-21C text5 CODE >128:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-21D text5 CODE >130:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-8C text4 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-8C text4 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-8F text4 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-93 text4 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-98 text4 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-9A text4 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-9E text4 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-A3 text4 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-A7 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-A9 text4 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-AF text4 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-B1 text4 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-B2 text4 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-B9 text4 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-BD text4 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-C1 text4 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-C8 text4 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-D2 text4 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-D8 text4 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-D9 text4 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-E0 text4 CODE >36:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-E6 text4 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-EB text4 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-F0 text4 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-F4 text4 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-21E text3 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-21F text3 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-220 text3 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-224 text3 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-228 text3 CODE >45:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-22A text3 CODE >46:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-22C text3 CODE >47:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-231 text3 CODE >50:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-232 text3 CODE >51:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+1BF text6 CODE >40:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1BF text6 CODE >41:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1C9 text6 CODE >42:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1CD text6 CODE >43:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1CF text6 CODE >44:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1D0 text6 CODE >46:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1DA text6 CODE >47:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1DC text6 CODE >48:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1DE text6 CODE >49:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1DF text6 CODE >51:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1E3 text6 CODE >53:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1E7 text6 CODE >54:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1ED text6 CODE >55:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1EE text6 CODE >56:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1F0 text6 CODE >58:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1F1 text6 CODE >59:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1F8 text5 CODE >93:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1F8 text5 CODE >95:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1FB text5 CODE >96:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1FC text5 CODE >97:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1FF text5 CODE >98:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+201 text5 CODE >99:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+202 text5 CODE >100:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+203 text5 CODE >101:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+206 text5 CODE >102:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+207 text5 CODE >103:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+208 text5 CODE >106:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+209 text5 CODE >107:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+20A text5 CODE >108:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+20C text5 CODE >109:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+20D text5 CODE >110:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+20E text5 CODE >111:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+20F text5 CODE >112:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+211 text5 CODE >114:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+214 text5 CODE >115:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+215 text5 CODE >116:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+216 text5 CODE >117:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+217 text5 CODE >118:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+218 text5 CODE >119:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+21C text5 CODE >120:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+21D text5 CODE >121:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+21E text5 CODE >123:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+221 text5 CODE >124:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+222 text5 CODE >125:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+223 text5 CODE >126:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+224 text5 CODE >127:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+225 text5 CODE >128:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+226 text5 CODE >130:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+95 text4 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+95 text4 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+98 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+9C text4 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+A1 text4 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+A3 text4 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+A7 text4 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+AC text4 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+B0 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+B2 text4 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+B8 text4 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+BA text4 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+BB text4 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+C2 text4 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+C6 text4 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+CA text4 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+D1 text4 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+DB text4 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+E1 text4 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+E2 text4 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+E9 text4 CODE >36:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+EF text4 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+F4 text4 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+F9 text4 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+FD text4 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+227 text3 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+228 text3 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+229 text3 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+22D text3 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+231 text3 CODE >45:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+233 text3 CODE >46:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+235 text3 CODE >47:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+23A text3 CODE >50:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+23B text3 CODE >51:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
 1C text2 CODE >159:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
 1F text2 CODE >160:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-23 text2 CODE >162:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-24 text2 CODE >163:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-3C text2 CODE >164:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-4E text2 CODE >162:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-55 text2 CODE >168:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-6D text2 CODE >169:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-7F text2 CODE >167:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-85 text2 CODE >172:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-8B text2 CODE >173:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-159 text1 CODE >132:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-15A text1 CODE >133:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-15B text1 CODE >135:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-160 text1 CODE >137:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-165 text1 CODE >139:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-16A text1 CODE >141:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-16F text1 CODE >143:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-174 text1 CODE >145:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-179 text1 CODE >147:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-17E text1 CODE >149:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-183 text1 CODE >151:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-188 text1 CODE >153:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-18D text1 CODE >156:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-1B5 text1 CODE >157:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-F5 maintext CODE >61:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-F5 maintext CODE >62:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-FA maintext CODE >65:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-FE maintext CODE >67:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-104 maintext CODE >68:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-10B maintext CODE >69:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-119 maintext CODE >70:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-11A maintext CODE >72:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-11B maintext CODE >73:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-121 maintext CODE >74:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-125 maintext CODE >75:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-126 maintext CODE >77:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-127 maintext CODE >78:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-12D maintext CODE >79:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-131 maintext CODE >80:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-132 maintext CODE >82:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-133 maintext CODE >83:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-139 maintext CODE >84:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-13D maintext CODE >85:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-13E maintext CODE >87:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
-153 maintext CODE >88:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+23 text2 CODE >161:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+26 text2 CODE >162:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+29 text2 CODE >163:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+2C text2 CODE >166:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+2D text2 CODE >167:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+45 text2 CODE >168:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+57 text2 CODE >166:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+5E text2 CODE >172:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+76 text2 CODE >173:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+88 text2 CODE >171:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+8E text2 CODE >176:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+94 text2 CODE >177:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+162 text1 CODE >132:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+163 text1 CODE >133:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+164 text1 CODE >135:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+169 text1 CODE >137:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+16E text1 CODE >139:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+173 text1 CODE >141:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+178 text1 CODE >143:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+17D text1 CODE >145:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+182 text1 CODE >147:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+187 text1 CODE >149:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+18C text1 CODE >151:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+191 text1 CODE >153:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+196 text1 CODE >156:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+1BE text1 CODE >157:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+FE maintext CODE >61:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+FE maintext CODE >62:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+103 maintext CODE >65:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+107 maintext CODE >67:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+10D maintext CODE >68:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+114 maintext CODE >69:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+122 maintext CODE >70:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+123 maintext CODE >72:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+124 maintext CODE >73:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+12A maintext CODE >74:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+12E maintext CODE >75:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+12F maintext CODE >77:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+130 maintext CODE >78:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+136 maintext CODE >79:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+13A maintext CODE >80:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+13B maintext CODE >82:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+13C maintext CODE >83:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+142 maintext CODE >84:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+146 maintext CODE >85:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+147 maintext CODE >87:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
+15C maintext CODE >88:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -233,7 +236,7 @@ FE maintext CODE >67:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Lab71.X.production.o
 ___awdiv@counter 21 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
-__Hspace_0 233 0 ABS 0 - -
+__Hspace_0 23C 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -243,21 +246,21 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _Cent 78 0 COMMON 1 bssCOMMON dist/default/production\Lab71.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Lab71.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\s9po.o
-_main 1EA 0 CODE 0 maintext dist/default/production\Lab71.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\smak.o
+_main 1FC 0 CODE 0 maintext dist/default/production\Lab71.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab71.X.production.o
-start 18 0 CODE 0 init C:\Users\jalva\AppData\Local\Temp\s9po.o
+start 18 0 CODE 0 init C:\Users\jalva\AppData\Local\Temp\smak.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9po.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9po.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9po.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9po.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9po.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9po.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\smak.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\smak.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\smak.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\smak.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\smak.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\smak.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _division 38 0 CODE 0 text2 dist/default/production\Lab71.X.production.o
 ___bmul@multiplicand 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
@@ -265,25 +268,25 @@ _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab71.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __size_of_configuracion 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-__end_of_division 118 0 CODE 0 text2 dist/default/production\Lab71.X.production.o
+__end_of_division 12A 0 CODE 0 text2 dist/default/production\Lab71.X.production.o
 ___awdiv@sign 22 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab71.X.production.o
 ___awdiv@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
-__end_of___bmul 466 0 CODE 0 text3 dist/default/production\Lab71.X.production.o
+__end_of___bmul 478 0 CODE 0 text3 dist/default/production\Lab71.X.production.o
 _Conteo 77 0 COMMON 1 bssCOMMON dist/default/production\Lab71.X.production.o
-__end_of_configuracion 43C 0 CODE 0 text5 dist/default/production\Lab71.X.production.o
+__end_of_configuracion 44E 0 CODE 0 text5 dist/default/production\Lab71.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 ___bmul@multiplier 76 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
 ___awdiv@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
-__end_of___awdiv 1EA 0 CODE 0 text4 dist/default/production\Lab71.X.production.o
+__end_of___awdiv 1FC 0 CODE 0 text4 dist/default/production\Lab71.X.production.o
 division@cent 26 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\s9po.o
-___stacklo 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\s9po.o
+___stackhi 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\smak.o
+___stacklo 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\smak.o
 _WPUBbits 95 0 ABS 0 - dist/default/production\Lab71.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Lab71.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\s9po.o
+___int_sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\smak.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -319,27 +322,27 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-___bmul 43C 0 CODE 0 text3 dist/default/production\Lab71.X.production.o
+___bmul 44E 0 CODE 0 text3 dist/default/production\Lab71.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _Dec 79 0 COMMON 1 bssCOMMON dist/default/production\Lab71.X.production.o
 _MUX 2E 0 BANK0 1 bssBANK0 dist/default/production\Lab71.X.production.o
 _Uni 7A 0 COMMON 1 bssCOMMON dist/default/production\Lab71.X.production.o
-__S0 233 0 ABS 0 - -
+__S0 23C 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 36C 0 CODE 0 text6 dist/default/production\Lab71.X.production.o
+_isr 37E 0 CODE 0 text6 dist/default/production\Lab71.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Lab71.X.production.o
-__end_of_isr 3DE 0 CODE 0 text6 dist/default/production\Lab71.X.production.o
+__end_of_isr 3F0 0 CODE 0 text6 dist/default/production\Lab71.X.production.o
 division@dec 25 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
 division@div 2B 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\jalva\AppData\Local\Temp\s9po.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\jalva\AppData\Local\Temp\smak.o
 __size_of___bmul 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-___awdiv 118 0 CODE 0 text4 dist/default/production\Lab71.X.production.o
-__pmaintext 1EA 0 CODE 0 maintext dist/default/production\Lab71.X.production.o
+___awdiv 12A 0 CODE 0 text4 dist/default/production\Lab71.X.production.o
+__pmaintext 1FC 0 CODE 0 maintext dist/default/production\Lab71.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __Lspace_0 0 0 ABS 0 - -
@@ -356,15 +359,15 @@ __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 ___awdiv@quotient 23 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
 ?___awdiv 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
-_multiplexado 2B2 0 CODE 0 text1 dist/default/production\Lab71.X.production.o
+_multiplexado 2C4 0 CODE 0 text1 dist/default/production\Lab71.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 2B2 0 CODE 0 text1 dist/default/production\Lab71.X.production.o
+__ptext1 2C4 0 CODE 0 text1 dist/default/production\Lab71.X.production.o
 __ptext2 38 0 CODE 0 text2 dist/default/production\Lab71.X.production.o
-__ptext3 43C 0 CODE 0 text3 dist/default/production\Lab71.X.production.o
-__ptext4 118 0 CODE 0 text4 dist/default/production\Lab71.X.production.o
-__ptext5 3DE 0 CODE 0 text5 dist/default/production\Lab71.X.production.o
-__ptext6 36C 0 CODE 0 text6 dist/default/production\Lab71.X.production.o
+__ptext3 44E 0 CODE 0 text3 dist/default/production\Lab71.X.production.o
+__ptext4 12A 0 CODE 0 text4 dist/default/production\Lab71.X.production.o
+__ptext5 3F0 0 CODE 0 text5 dist/default/production\Lab71.X.production.o
+__ptext6 37E 0 CODE 0 text6 dist/default/production\Lab71.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -375,8 +378,8 @@ __size_of_multiplexado 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 2B2 0 CODE 0 maintext dist/default/production\Lab71.X.production.o
-__end_of_multiplexado 36C 0 CODE 0 text1 dist/default/production\Lab71.X.production.o
+__end_of_main 2C4 0 CODE 0 maintext dist/default/production\Lab71.X.production.o
+__end_of_multiplexado 37E 0 CODE 0 text1 dist/default/production\Lab71.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Lab71.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Lab71.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Lab71.X.production.o
@@ -392,7 +395,7 @@ interrupt_function 8 0 CODE 0 intentry dist/default/production\Lab71.X.productio
 _IOCBbits 96 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Lab71.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
-_configuracion 3DE 0 CODE 0 text5 dist/default/production\Lab71.X.production.o
+_configuracion 3F0 0 CODE 0 text5 dist/default/production\Lab71.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Lab71.X.production.o
 ___bmul@product 75 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
 __pbssBANK0 2E 0 BANK0 1 bssBANK0 dist/default/production\Lab71.X.production.o
@@ -423,7 +426,7 @@ __pbssBANK0 2E 0 BANK0 1 bssBANK0 dist/default/production\Lab71.X.production.o
 %SEGMENTS
 cstackCOMMON 1 70 70 B 1
 cstackBANK0 1 20 20 11 1
-intentry 0 4 8 22F 2
+intentry 0 4 8 238 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

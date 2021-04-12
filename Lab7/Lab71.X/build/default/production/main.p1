@@ -701,59 +701,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 158 ]
 }
 "132
-[; ;main.c: 132:     while(div >= 100){
+[; ;main.c: 132:     *dec = 0;
 [v _multiplexado `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _multiplexado ]
 [v _val `uc ~T0 @X0 1 r1 ]
 [f ]
 "133
-[; ;main.c: 133:     *cent = div/100;
+[; ;main.c: 133:     *cent = 0;
 [e $U 161  ]
 {
 "134
-[; ;main.c: 134:     div = div - (*cent)*(100);
+[; ;main.c: 134: 
 [e :U 162 ]
 "135
-[; ;main.c: 135:     }
+[; ;main.c: 135: 
 [e = _PORTD -> -> 63 `i `uc ]
 [e $U 160  ]
 "136
-[; ;main.c: 136: 
+[; ;main.c: 136:     while(div >= 100){
 [e :U 163 ]
 "137
-[; ;main.c: 137:     while (div >= 10){
+[; ;main.c: 137:     *cent = div/100;
 [e = _PORTD -> -> 6 `i `uc ]
 [e $U 160  ]
 "138
-[; ;main.c: 138:     *dec = div/10;
+[; ;main.c: 138:     div = div - (*cent)*(100);
 [e :U 164 ]
 "139
-[; ;main.c: 139:     div = div - (*dec)*(10);
+[; ;main.c: 139:     }
 [e = _PORTD -> -> 91 `i `uc ]
 [e $U 160  ]
 "140
-[; ;main.c: 140:     }
+[; ;main.c: 140: 
 [e :U 165 ]
 "141
-[; ;main.c: 141: 
+[; ;main.c: 141:     while (div >= 10){
 [e = _PORTD -> -> 79 `i `uc ]
 [e $U 160  ]
 "142
-[; ;main.c: 142:     *un = div;
+[; ;main.c: 142:     *dec = div/10;
 [e :U 166 ]
 "143
-[; ;main.c: 143: }
+[; ;main.c: 143:     div = div - (*dec)*(10);
 [e = _PORTD -> -> 102 `i `uc ]
 [e $U 160  ]
 "144
+[; ;main.c: 144:     }
 [e :U 167 ]
 "145
+[; ;main.c: 145: 
 [e = _PORTD -> -> 109 `i `uc ]
 [e $U 160  ]
 "146
+[; ;main.c: 146:     *un = div;
 [e :U 168 ]
 "147
+[; ;main.c: 147: }
 [e = _PORTD -> -> 125 `i `uc ]
 [e $U 160  ]
 "148
@@ -806,36 +810,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 "160
 [v _div `uc ~T0 @X0 1 a ]
 [e = _div _PORTA ]
+"161
+[e = *U _un -> -> 0 `i `uc ]
 "162
+[e = *U _dec -> -> 0 `i `uc ]
+"163
+[e = *U _cent -> -> 0 `i `uc ]
+"166
 [e $U 174  ]
 [e :U 175 ]
 {
-"163
+"167
 [e = *U _cent -> / -> _div `i -> 100 `i `uc ]
-"164
+"168
 [e = _div -> - -> _div `i * -> *U _cent `i -> 100 `i `uc ]
-"165
+"169
 }
 [e :U 174 ]
-"162
+"166
 [e $ >= -> _div `i -> 100 `i 175  ]
 [e :U 176 ]
-"167
+"171
 [e $U 177  ]
 [e :U 178 ]
 {
-"168
+"172
 [e = *U _dec -> / -> _div `i -> 10 `i `uc ]
-"169
+"173
 [e = _div -> - -> _div `i * -> *U _dec `i -> 10 `i `uc ]
-"170
+"174
 }
 [e :U 177 ]
-"167
+"171
 [e $ >= -> _div `i -> 10 `i 178  ]
 [e :U 179 ]
-"172
+"176
 [e = *U _un _div ]
-"173
+"177
 [e :UE 173 ]
 }

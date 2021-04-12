@@ -2964,6 +2964,10 @@ void multiplexado(uint8_t val){
 
 void division(uint8_t* un,uint8_t* dec,uint8_t* cent){
     uint8_t div = PORTA;
+    *un = 0;
+    *dec = 0;
+    *cent = 0;
+
 
     while(div >= 100){
     *cent = div/100;
