@@ -1,8 +1,17 @@
 /* 
  * File:   main.c
- * Author: jalva
+ * Autor: Jose Luis Alvarez Pineda
  *
- * Created on 12 de abril de 2021, 01:02 PM
+ * Creado: 12 de abril de 2021
+ * Modificado: 13 de abril de 2021
+ * Funcionamiento: se utiliza el timmer 0 para multiplexar valores mostrados
+ * en un 7 segmentos, los cuales incrementan o decrementan con dos botones.
+ * 
+ * Hardware:
+ * Puerto A: indicador binario del valor a aumentar.
+ * Puerto B: los primeros dos botones, 0 para aumentar y 1 para decrementar.
+ * Puerto C: utilizado para multiplexar.
+ * Puerto D: los puertos asignados a cada display.
  */
 //LIBRERIAS INCLUIDAS
 #include <xc.h>
@@ -12,25 +21,36 @@
 
 //BITS DE CONFIGURACION
 // CONFIG1
-#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
-#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
+#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO 
+//oscillator: I/O function on RA6/OSC2/CLKOUT pin, 
+//I/O function on RA7/OSC1/CLKIN)
+#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and 
+//can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
-#pragma config MCLRE = ON       // RE3/MCLR pin function select bit (RE3/MCLR pin function is MCLR)
-#pragma config CP = OFF         // Code Protection bit (Program memory code protection is disabled)
-#pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection is disabled)
+#pragma config MCLRE = ON       // RE3/MCLR pin function select bit 
+//(RE3/MCLR pin function is MCLR)
+#pragma config CP = OFF         // Code Protection bit 
+//(Program memory code protection is disabled)
+#pragma config CPD = OFF        // Data Code Protection bit 
+//(Data memory code protection is disabled)
 #pragma config BOREN = OFF      // Brown Out Reset Selection bits (BOR disabled)
-#pragma config IESO = OFF       // Internal External Switchover bit (Internal/External Switchover mode is disabled)
-#pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is disabled)
-#pragma config LVP = OFF        // Low Voltage Programming Enable bit (RB3 pin has digital I/O, HV on MCLR must be used for programming)
+#pragma config IESO = OFF       // Internal External Switchover bit 
+//(Internal/External Switchover mode is disabled)
+#pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enabled bit 
+//(Fail-Safe Clock Monitor is disabled)
+#pragma config LVP = OFF        // Low Voltage Programming Enable bit 
+//(RB3 pin has digital I/O, HV on MCLR must be used for programming)
 
 // CONFIG2
-#pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
-#pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
+#pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit 
+//(Brown-out Reset set to 4.0V)
+#pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits 
+//(Write protection off)
 
 //PROTOTIPOS DE LAS FUNCIONES
 void configuracion(void);
 void multiplexado(uint8_t val);
-void division(uint8_t* un,uint8_t* dec,uint8_t* cent);
+void division(uint8_t conteo,uint8_t* un,uint8_t* dec,uint8_t* cent);
 
 //VARIABLES a utilizar
 uint8_t Contador = 0,Conteo = 0, Uni = 0, Dec = 0, Cent = 0;
@@ -66,7 +86,7 @@ void main(void) {
         
         if(MUX){    //Para que solo actualice acorde al timmer
             if(Conteo >2) Conteo = 0;
-            division(&Uni,&Dec,&Cent);  //realiza la division
+            division(Contador,&Uni,&Dec,&Cent);  //realiza la division
         switch(Conteo){
             case 0:
                 PORTC = 0X00;
@@ -156,8 +176,8 @@ void multiplexado(uint8_t val){
     }
 }
 
-void division(uint8_t* un,uint8_t* dec,uint8_t* cent){
-    uint8_t div = PORTA;
+void division(uint8_t conteo,uint8_t* un,uint8_t* dec,uint8_t* cent){
+    uint8_t div = conteo;
     *un =   0;
     *dec =  0;
     *cent = 0;

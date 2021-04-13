@@ -7,13 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
-
-
-
-
-
-
+# 17 "main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2494,7 +2488,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 8 "main.c" 2
+# 17 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2593,7 +2587,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 9 "main.c" 2
+# 18 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2678,7 +2672,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 10 "main.c" 2
+# 19 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2813,30 +2807,41 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 11 "main.c" 2
+# 20 "main.c" 2
 
 
 
 
 #pragma config FOSC = INTRC_NOCLKOUT
+
+
 #pragma config WDTE = OFF
+
 #pragma config PWRTE = OFF
 #pragma config MCLRE = ON
+
 #pragma config CP = OFF
+
 #pragma config CPD = OFF
+
 #pragma config BOREN = OFF
 #pragma config IESO = OFF
+
 #pragma config FCMEN = OFF
+
 #pragma config LVP = OFF
 
 
+
 #pragma config BOR4V = BOR40V
+
 #pragma config WRT = OFF
+
 
 
 void configuracion(void);
 void multiplexado(uint8_t val);
-void division(uint8_t* un,uint8_t* dec,uint8_t* cent);
+void division(uint8_t conteo,uint8_t* un,uint8_t* dec,uint8_t* cent);
 
 
 uint8_t Contador = 0,Conteo = 0, Uni = 0, Dec = 0, Cent = 0;
@@ -2872,7 +2877,7 @@ void main(void) {
 
         if(MUX){
             if(Conteo >2) Conteo = 0;
-            division(&Uni,&Dec,&Cent);
+            division(Contador,&Uni,&Dec,&Cent);
         switch(Conteo){
             case 0:
                 PORTC = 0X00;
@@ -2962,8 +2967,8 @@ void multiplexado(uint8_t val){
     }
 }
 
-void division(uint8_t* un,uint8_t* dec,uint8_t* cent){
-    uint8_t div = PORTA;
+void division(uint8_t conteo,uint8_t* un,uint8_t* dec,uint8_t* cent){
+    uint8_t div = conteo;
     *un = 0;
     *dec = 0;
     *cent = 0;
