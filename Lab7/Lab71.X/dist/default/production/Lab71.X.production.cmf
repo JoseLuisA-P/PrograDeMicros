@@ -26,7 +26,7 @@ intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 2F 2F 4 1
 bssCOMMON COMMON 1 78 78 3 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\jalva\AppData\Local\Temp\sca4.o
+$C:\Users\jalva\AppData\Local\Temp\s1eg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -76,20 +76,20 @@ STRING 243-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab71.X.production.o
-F cinit CODE >471:C:\Users\jalva\AppData\Local\Temp\sca4.s
-F cinit CODE >474:C:\Users\jalva\AppData\Local\Temp\sca4.s
-F cinit CODE >503:C:\Users\jalva\AppData\Local\Temp\sca4.s
-10 cinit CODE >504:C:\Users\jalva\AppData\Local\Temp\sca4.s
-11 cinit CODE >505:C:\Users\jalva\AppData\Local\Temp\sca4.s
-12 cinit CODE >508:C:\Users\jalva\AppData\Local\Temp\sca4.s
-13 cinit CODE >509:C:\Users\jalva\AppData\Local\Temp\sca4.s
-14 cinit CODE >510:C:\Users\jalva\AppData\Local\Temp\sca4.s
-15 cinit CODE >511:C:\Users\jalva\AppData\Local\Temp\sca4.s
-16 cinit CODE >512:C:\Users\jalva\AppData\Local\Temp\sca4.s
-17 cinit CODE >513:C:\Users\jalva\AppData\Local\Temp\sca4.s
-18 cinit CODE >519:C:\Users\jalva\AppData\Local\Temp\sca4.s
-18 cinit CODE >521:C:\Users\jalva\AppData\Local\Temp\sca4.s
-19 cinit CODE >522:C:\Users\jalva\AppData\Local\Temp\sca4.s
+F cinit CODE >471:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+F cinit CODE >474:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+F cinit CODE >503:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+10 cinit CODE >504:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+11 cinit CODE >505:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+12 cinit CODE >508:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+13 cinit CODE >509:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+14 cinit CODE >510:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+15 cinit CODE >511:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+16 cinit CODE >512:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+17 cinit CODE >513:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+18 cinit CODE >519:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+18 cinit CODE >521:C:\Users\jalva\AppData\Local\Temp\s1eg.s
+19 cinit CODE >522:C:\Users\jalva\AppData\Local\Temp\s1eg.s
 4 intentry CODE >60:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
 1C6 text6 CODE >60:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
 1C6 text6 CODE >61:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab7\Lab71.X\main.c
@@ -246,22 +246,22 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _Cent 31 0 BANK0 1 bssBANK0 dist/default/production\Lab71.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Lab71.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\sca4.o
+___sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\s1eg.o
 _main 202 0 CODE 0 maintext dist/default/production\Lab71.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab71.X.production.o
-start 18 0 CODE 0 init C:\Users\jalva\AppData\Local\Temp\sca4.o
+start 18 0 CODE 0 init C:\Users\jalva\AppData\Local\Temp\s1eg.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 division@conteo 2A 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\sca4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\sca4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\sca4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\sca4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\sca4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\sca4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s1eg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s1eg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s1eg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s1eg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s1eg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s1eg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _division 38 0 CODE 0 text2 dist/default/production\Lab71.X.production.o
 ___bmul@multiplicand 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
@@ -282,12 +282,12 @@ ___bmul@multiplier 76 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.pr
 ___awdiv@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab71.X.production.o
 __end_of___awdiv 202 0 CODE 0 text4 dist/default/production\Lab71.X.production.o
 division@cent 26 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\sca4.o
-___stacklo 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\sca4.o
+___stackhi 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\s1eg.o
+___stacklo 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\s1eg.o
 _WPUBbits 95 0 ABS 0 - dist/default/production\Lab71.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Lab71.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\sca4.o
+___int_sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\s1eg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -339,7 +339,7 @@ __end_of_isr 3FE 0 CODE 0 text6 dist/default/production\Lab71.X.production.o
 division@dec 25 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
 division@div 2B 0 BANK0 1 cstackBANK0 dist/default/production\Lab71.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\jalva\AppData\Local\Temp\sca4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\jalva\AppData\Local\Temp\s1eg.o
 __size_of___bmul 0 0 ABS 0 - dist/default/production\Lab71.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 ___awdiv 130 0 CODE 0 text4 dist/default/production\Lab71.X.production.o
