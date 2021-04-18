@@ -2849,7 +2849,7 @@ union BANDERAS{
     struct{
         unsigned updt: 1;
         unsigned chchan: 1;
-        unsigned : 1;
+        unsigned mux: 1;
         unsigned : 1;
         unsigned : 1;
         unsigned : 1;
@@ -2858,10 +2858,12 @@ union BANDERAS{
     };
 }bandera1;
 
-uint8_t POT1, POT2;
+uint8_t POT1, POT2, uni=0, dec=0, cent=0, conteo = 0, Contador = 0;
 
 
 void configuracion(void);
+void multiplexado(uint8_t val);
+void division(uint8_t conteo,uint8_t* un,uint8_t* dec,uint8_t* cent);
 
 void __attribute__((picinterrupt(("")))) isr(void){
 
@@ -2869,10 +2871,11 @@ void __attribute__((picinterrupt(("")))) isr(void){
         bandera1.updt = 1;
         PIR1bits.ADIF = 0;
         bandera1.chchan = ~bandera1.chchan;
-        INTCONbits.T0IF = 0;
         if (!bandera1.chchan)ADCON0bits.CHS0 = 1;
         else ADCON0bits.CHS0 = 0;
+        Contador++;
         TMR0 = 250;
+        INTCONbits.T0IF = 0;
     }
 
 }
@@ -2882,21 +2885,47 @@ void main(void) {
 
     while(1){
         if(INTCONbits.T0IF){
-
             if(bandera1.updt && !bandera1.chchan){
                 POT1 = ADRESH;
                 bandera1.updt = 0;
                 PORTB = POT1;
-                ADCON0bits.GO = 1;
             }
 
             if(bandera1.updt && bandera1.chchan){
                 POT2 = ADRESH;
                 bandera1.updt = 0;
-                PORTC = POT2;
-                ADCON0bits.GO = 1;
             }
 
+            if(Contador > 250){bandera1.mux = 1; Contador = 0;}
+
+            if(bandera1.mux){
+                conteo ++;
+                if(conteo > 2) conteo = 0;
+                division(POT2, &uni, &dec, &cent);
+                switch(conteo){
+                    case 0:
+                        PORTC = 0X00;
+                        multiplexado(uni);
+                        PORTC = 0X01;
+                        break;
+                    case 1:
+                        PORTC = 0X00;
+                        multiplexado(dec);
+                        PORTC = 0X02;
+                        break;
+                    case 2:
+                        PORTC = 0X00;
+                        multiplexado(cent);
+                        PORTC = 0X04;
+                        break;
+
+                    default:
+                        break;
+                }
+                bandera1.mux = 0;
+            }
+
+        ADCON0bits.GO = 1;
         }
     }
 
@@ -2945,4 +2974,51 @@ void configuracion(void){
     TMR0 = 250;
 
     ADCON0bits.GO = 0b1;
+}
+
+void multiplexado(uint8_t val){
+    switch(val){
+        case 0:
+        PORTD = 0b00111111; break;
+        case 1:
+        PORTD = 0b00000110; break;
+        case 2:
+        PORTD = 0b01011011; break;
+        case 3:
+        PORTD = 0b01001111; break;
+        case 4:
+        PORTD = 0b01100110; break;
+        case 5:
+        PORTD = 0b01101101; break;
+        case 6:
+        PORTD = 0b01111101; break;
+        case 7:
+        PORTD = 0b00000111; break;
+        case 8:
+        PORTD = 0b01111111; break;
+        case 9:
+        PORTD = 0b01100111; break;
+        default:
+        PORTD = 0b00111111; break;
+    }
+}
+
+void division(uint8_t conteo,uint8_t* un,uint8_t* dec,uint8_t* cent){
+    uint8_t div = conteo;
+    *un = 0;
+    *dec = 0;
+    *cent = 0;
+
+
+    while(div >= 100){
+    *cent = div/100;
+    div = div - (*cent)*(100);
+    }
+
+    while (div >= 10){
+    *dec = div/10;
+    div = div - (*dec)*(10);
+    }
+
+    *un = div;
 }

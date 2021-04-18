@@ -3,20 +3,28 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"59 D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab8\Lab8.X\main.c
+"61 D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab8\Lab8.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"73
+"76
 [v _main main `(v  1 e 1 0 ]
-"99
+"128
 [v _configuracion configuracion `(v  1 e 1 0 ]
+"172
+[v _multiplexado multiplexado `(v  1 e 1 0 ]
+"199
+[v _division division `(v  1 e 1 0 ]
 "59 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "166
@@ -27,7 +35,7 @@
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S52 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S99 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -37,13 +45,13 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S61 . 1 `uc 1 . 1 0 :2:0 
+[s S108 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S66 . 1 `S52 1 . 1 0 `S61 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES66  1 e 1 @11 ]
+[u S113 . 1 `S99 1 . 1 0 `S108 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES113  1 e 1 @11 ]
 [s S33 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -57,13 +65,13 @@
 [v _PIR1bits PIR1bits `VES41  1 e 1 @12 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S84 . 1 `uc 1 ADON 1 0 :1:0 
+[s S52 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S89 . 1 `uc 1 . 1 0 :1:0 
+[s S57 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -72,15 +80,15 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S98 . 1 `uc 1 . 1 0 :1:0 
+[s S66 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S101 . 1 `uc 1 . 1 0 :1:0 
+[s S69 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S104 . 1 `S84 1 . 1 0 `S89 1 . 1 0 `S98 1 . 1 0 `S101 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES104  1 e 1 @31 ]
-[s S206 . 1 `uc 1 PS 1 0 :3:0 
+[u S72 . 1 `S52 1 . 1 0 `S57 1 . 1 0 `S66 1 . 1 0 `S69 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES72  1 e 1 @31 ]
+[s S219 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -88,12 +96,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S213 . 1 `uc 1 PS0 1 0 :1:0 
+[s S226 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S217 . 1 `S206 1 . 1 0 `S213 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES217  1 e 1 @129 ]
+[u S230 . 1 `S219 1 . 1 0 `S226 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES230  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
@@ -102,7 +110,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S161 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S174 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -111,38 +119,38 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S169 . 1 `S161 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES169  1 e 1 @140 ]
-[s S180 . 1 `uc 1 SCS 1 0 :1:0 
+[u S182 . 1 `S174 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES182  1 e 1 @140 ]
+[s S193 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S186 . 1 `uc 1 . 1 0 :4:0 
+[s S199 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S191 . 1 `S180 1 . 1 0 `S186 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES191  1 e 1 @143 ]
-[s S146 . 1 `uc 1 . 1 0 :4:0 
+[u S204 . 1 `S193 1 . 1 0 `S199 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES204  1 e 1 @143 ]
+[s S159 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S152 . 1 `S146 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES152  1 e 1 @159 ]
+[u S165 . 1 `S159 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES165  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 [s S22 . 1 `uc 1 updt 1 0 :1:0 
 `uc 1 chchan 1 0 :1:1 
-`uc 1 . 1 0 :1:2 
+`uc 1 mux 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 . 1 0 :1:5 
@@ -155,18 +163,71 @@
 "54
 [v _POT1 POT1 `uc  1 e 1 0 ]
 [v _POT2 POT2 `uc  1 e 1 0 ]
-"73
+[v _uni uni `uc  1 e 1 0 ]
+[v _dec dec `uc  1 e 1 0 ]
+[v _cent cent `uc  1 e 1 0 ]
+[v _conteo conteo `uc  1 e 1 0 ]
+[v _Contador Contador `uc  1 e 1 0 ]
+"76
 [v _main main `(v  1 e 1 0 ]
 {
-"96
+"125
 } 0
-"99
+"172
+[v _multiplexado multiplexado `(v  1 e 1 0 ]
+{
+[v multiplexado@val val `uc  1 a 1 wreg ]
+[v multiplexado@val val `uc  1 a 1 wreg ]
+[v multiplexado@val val `uc  1 a 1 5 ]
+"197
+} 0
+"199
+[v _division division `(v  1 e 1 0 ]
+{
+[v division@conteo conteo `uc  1 a 1 wreg ]
+"200
+[v division@div div `uc  1 a 1 11 ]
+"199
+[v division@conteo conteo `uc  1 a 1 wreg ]
+[v division@un un `*.1uc  1 p 1 4 ]
+[v division@dec dec `*.1uc  1 p 1 5 ]
+[v division@cent cent `*.4uc  1 p 1 6 ]
+[v division@conteo conteo `uc  1 a 1 10 ]
+"217
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 5 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 3 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 6 ]
+"51
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 3 ]
+[v ___awdiv@dividend dividend `i  1 p 2 5 ]
+"41
+} 0
+"128 D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab8\Lab8.X\main.c
 [v _configuracion configuracion `(v  1 e 1 0 ]
 {
-"141
+"170
 } 0
-"59
+"61
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"71
+"74
 } 0
