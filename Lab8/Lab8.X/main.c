@@ -51,29 +51,45 @@ union BANDERAS{ //declarar variable con bits nombrados
     };
 }bandera1;
 
+uint8_t POT1, POT2;
+
 //----------------------------prototipos----------------------------------------
 void configuracion(void);
 //-----------------------------Interrupciones-----------------------------------
 void __interrupt() isr(void){
+    
     if(PIR1bits.ADIF){
-        if(!bandera1.chchan){
-            bandera1.updt = 1;  //coloca bandera en 1
-            PIR1bits.ADIF = 0;  //apaga bandera de converison analogica
-        }
+        bandera1.updt = 1;  //coloca bandera en 1
+        PIR1bits.ADIF = 0;  //apaga bandera de converison analogica
+        bandera1.chchan = ~bandera1.chchan;   //cambio de canal
+        INTCONbits.T0IF = 0;
+        ADCON0bits.CHS0 = ~ADCON0bits.CHS0; //Cambia de puerto analogico
+        TMR0 = 250;
     }
+   
 }
 //-----------------------------MAIN---------------------------------------------
 void main(void) {
     configuracion();
     
     while(1){
-        
-        if(bandera1.updt && !bandera1.chchan){
-            bandera1.updt = 0;  //apaga la bandera
-            PORTB = ADRESH;     //El valor se despliega en leds en PORTB
-            ADCON0bits.GO = 1;  //De nuevo comienza a contar
+        if(INTCONbits.T0IF){
+            
+            if(bandera1.updt && !bandera1.chchan){
+                POT1 = ADRESH;
+                bandera1.updt = 0;  //apaga la bandera
+                PORTB = POT1;     //El valor se despliega en leds en PORTB
+                ADCON0bits.GO = 1;  //De nuevo comienza a contar
+            }
+            
+            if(bandera1.updt && bandera1.chchan){
+                POT2 = ADRESH;
+                bandera1.updt = 0;  //apaga la bandera
+                PORTC = POT2;     //El valor se despliega en leds en PORTB
+                ADCON0bits.GO = 1;  //De nuevo comienza a contar
+            }
+            
         }
-        
     }
     
 }
@@ -92,7 +108,7 @@ void configuracion(void){
     PORTC =     0X00;
     PORTD =     0X00;
     
-    bandera1.chchan = 0;    //comienza con el canal AN0
+    bandera1.chchan = 1;    //comienza con el canal AN0
     
     //Configuracion del ADC
     //ADCON0
@@ -110,6 +126,15 @@ void configuracion(void){
     PIE1bits.ADIE =     0b1;    //habilitar interrupciones de ADC
     PIR1bits.ADIF =     0b0;    //apaga la bandera del ADC
     
+    //Configuracion timmer0
+    OSCCONbits.SCS = 1;
+    OPTION_REGbits.T0CS = 0;    //Timmer 0 a FOSC y Prescalador asignado
+    OPTION_REGbits.PSA  = 0;
+    OPTION_REGbits.PS2  = 0;    //valor del prescalador|
+    OPTION_REGbits.PS1  = 0;
+    OPTION_REGbits.PS0  = 0;
+    INTCONbits.T0IF =     0;
+    TMR0 = 250; 
+    
     ADCON0bits.GO =     0b1;    //esta conviertiendo
-   
 }

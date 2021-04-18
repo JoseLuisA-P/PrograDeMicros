@@ -2858,29 +2858,45 @@ union BANDERAS{
     };
 }bandera1;
 
+uint8_t POT1, POT2;
+
 
 void configuracion(void);
 
 void __attribute__((picinterrupt(("")))) isr(void){
+
     if(PIR1bits.ADIF){
-        if(!bandera1.chchan){
-            bandera1.updt = 1;
-            PIR1bits.ADIF = 0;
-        }
+        bandera1.updt = 1;
+        PIR1bits.ADIF = 0;
+        bandera1.chchan = ~bandera1.chchan;
+        INTCONbits.T0IF = 0;
+        ADCON0bits.CHS0 = ~ADCON0bits.CHS0;
+        TMR0 = 250;
     }
+
 }
 
 void main(void) {
     configuracion();
 
     while(1){
+        if(INTCONbits.T0IF){
 
-        if(bandera1.updt && !bandera1.chchan){
-            bandera1.updt = 0;
-            PORTB = ADRESH;
-            ADCON0bits.GO = 1;
+            if(bandera1.updt && !bandera1.chchan){
+                POT1 = ADRESH;
+                bandera1.updt = 0;
+                PORTB = POT1;
+                ADCON0bits.GO = 1;
+            }
+
+            if(bandera1.updt && bandera1.chchan){
+                POT2 = ADRESH;
+                bandera1.updt = 0;
+                PORTC = POT2;
+                ADCON0bits.GO = 1;
+            }
+
         }
-
     }
 
 }
@@ -2899,7 +2915,7 @@ void configuracion(void){
     PORTC = 0X00;
     PORTD = 0X00;
 
-    bandera1.chchan = 0;
+    bandera1.chchan = 1;
 
 
 
@@ -2917,6 +2933,15 @@ void configuracion(void){
     PIE1bits.ADIE = 0b1;
     PIR1bits.ADIF = 0b0;
 
-    ADCON0bits.GO = 0b1;
 
+    OSCCONbits.SCS = 1;
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS2 = 0;
+    OPTION_REGbits.PS1 = 0;
+    OPTION_REGbits.PS0 = 0;
+    INTCONbits.T0IF = 0;
+    TMR0 = 250;
+
+    ADCON0bits.GO = 0b1;
 }
