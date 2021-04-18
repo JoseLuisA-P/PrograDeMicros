@@ -63,7 +63,8 @@ void __interrupt() isr(void){
         PIR1bits.ADIF = 0;  //apaga bandera de converison analogica
         bandera1.chchan = ~bandera1.chchan;   //cambio de canal
         INTCONbits.T0IF = 0;
-        ADCON0bits.CHS0 = ~ADCON0bits.CHS0; //Cambia de puerto analogico
+        if (!bandera1.chchan)ADCON0bits.CHS0 = 1;
+        else ADCON0bits.CHS0 = 0; //Cambia de puerto analogico
         TMR0 = 250;
     }
    

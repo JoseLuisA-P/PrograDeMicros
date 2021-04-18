@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sat Apr 17 20:44:28 2021
+                                                                                               Sat Apr 17 21:01:51 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -291,7 +291,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    277 ;;
    278 ;; *************** function _main *****************
    279 ;; Defined at:
-   280 ;;		line 72 in file "main.c"
+   280 ;;		line 73 in file "main.c"
    281 ;; Parameters:    Size  Location     Type
    282 ;;		None
    283 ;; Auto vars:     Size  Location     Type
@@ -321,97 +321,97 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    307                           
    308                           ;psect for function _main
    309  0049                     _main:
-   310  0049                     l712:	
+   310  0049                     l718:	
    311                           ;incstack = 0
    312                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    313                           
    314                           
-   315                           ;main.c: 73:     configuracion();
+   315                           ;main.c: 74:     configuracion();
    316  0049  120A  118A  2016  120A  118A  	fcall	_configuracion
-   317  004E                     l714:
+   317  004E                     l720:
    318                           
-   319                           ;main.c: 76:         if(INTCONbits.T0IF){
+   319                           ;main.c: 77:         if(INTCONbits.T0IF){
    320  004E  1D0B               	btfss	11,2	;volatile
-   321  004F  2851               	goto	u61
-   322  0050  2852               	goto	u60
-   323  0051                     u61:
-   324  0051  284E               	goto	l714
-   325  0052                     u60:
-   326  0052                     l716:
+   321  004F  2851               	goto	u51
+   322  0050  2852               	goto	u50
+   323  0051                     u51:
+   324  0051  284E               	goto	l720
+   325  0052                     u50:
+   326  0052                     l722:
    327                           
-   328                           ;main.c: 78:             if(bandera1.updt && !bandera1.chchan){
+   328                           ;main.c: 79:             if(bandera1.updt && !bandera1.chchan){
    329  0052  1C72               	btfss	_bandera1,0
-   330  0053  2855               	goto	u71
-   331  0054  2856               	goto	u70
-   332  0055                     u71:
-   333  0055  2864               	goto	l726
-   334  0056                     u70:
-   335  0056                     l718:
+   330  0053  2855               	goto	u61
+   331  0054  2856               	goto	u60
+   332  0055                     u61:
+   333  0055  2864               	goto	l732
+   334  0056                     u60:
+   335  0056                     l724:
    336  0056  18F2               	btfsc	_bandera1,1
-   337  0057  2859               	goto	u81
-   338  0058  285A               	goto	u80
-   339  0059                     u81:
-   340  0059  2864               	goto	l726
-   341  005A                     u80:
-   342  005A                     l720:
+   337  0057  2859               	goto	u71
+   338  0058  285A               	goto	u70
+   339  0059                     u71:
+   340  0059  2864               	goto	l732
+   341  005A                     u70:
+   342  005A                     l726:
    343                           
-   344                           ;main.c: 79:                 POT1 = ADRESH;
+   344                           ;main.c: 80:                 POT1 = ADRESH;
    345  005A  1283               	bcf	3,5	;RP0=0, select bank0
    346  005B  1303               	bcf	3,6	;RP1=0, select bank0
    347  005C  081E               	movf	30,w	;volatile
    348  005D  00F5               	movwf	??_main
    349  005E  0875               	movf	??_main,w
    350  005F  00F1               	movwf	_POT1
-   351  0060                     l722:
+   351  0060                     l728:
    352                           
-   353                           ;main.c: 80:                 bandera1.updt = 0;
+   353                           ;main.c: 81:                 bandera1.updt = 0;
    354  0060  1072               	bcf	_bandera1,0
    355                           
-   356                           ;main.c: 81:                 PORTB = POT1;
+   356                           ;main.c: 82:                 PORTB = POT1;
    357  0061  0871               	movf	_POT1,w
    358  0062  0086               	movwf	6	;volatile
-   359  0063                     l724:
+   359  0063                     l730:
    360                           
-   361                           ;main.c: 82:                 ADCON0bits.GO = 1;
+   361                           ;main.c: 83:                 ADCON0bits.GO = 1;
    362  0063  149F               	bsf	31,1	;volatile
-   363  0064                     l726:
+   363  0064                     l732:
    364                           
-   365                           ;main.c: 85:             if(bandera1.updt && bandera1.chchan){
+   365                           ;main.c: 86:             if(bandera1.updt && bandera1.chchan){
    366  0064  1C72               	btfss	_bandera1,0
-   367  0065  2867               	goto	u91
-   368  0066  2868               	goto	u90
-   369  0067                     u91:
-   370  0067  284E               	goto	l714
-   371  0068                     u90:
-   372  0068                     l728:
+   367  0065  2867               	goto	u81
+   368  0066  2868               	goto	u80
+   369  0067                     u81:
+   370  0067  284E               	goto	l720
+   371  0068                     u80:
+   372  0068                     l734:
    373  0068  1CF2               	btfss	_bandera1,1
-   374  0069  286B               	goto	u101
-   375  006A  286C               	goto	u100
-   376  006B                     u101:
-   377  006B  284E               	goto	l714
-   378  006C                     u100:
-   379  006C                     l730:
+   374  0069  286B               	goto	u91
+   375  006A  286C               	goto	u90
+   376  006B                     u91:
+   377  006B  284E               	goto	l720
+   378  006C                     u90:
+   379  006C                     l736:
    380                           
-   381                           ;main.c: 86:                 POT2 = ADRESH;
+   381                           ;main.c: 87:                 POT2 = ADRESH;
    382  006C  1283               	bcf	3,5	;RP0=0, select bank0
    383  006D  1303               	bcf	3,6	;RP1=0, select bank0
    384  006E  081E               	movf	30,w	;volatile
    385  006F  00F5               	movwf	??_main
    386  0070  0875               	movf	??_main,w
    387  0071  00F0               	movwf	_POT2
-   388  0072                     l732:
+   388  0072                     l738:
    389                           
-   390                           ;main.c: 87:                 bandera1.updt = 0;
+   390                           ;main.c: 88:                 bandera1.updt = 0;
    391  0072  1072               	bcf	_bandera1,0
    392                           
-   393                           ;main.c: 88:                 PORTC = POT2;
+   393                           ;main.c: 89:                 PORTC = POT2;
    394  0073  0870               	movf	_POT2,w
    395  0074  0087               	movwf	7	;volatile
-   396  0075                     l734:
+   396  0075                     l740:
    397                           
-   398                           ;main.c: 89:                 ADCON0bits.GO = 1;
+   398                           ;main.c: 90:                 ADCON0bits.GO = 1;
    399  0075  149F               	bsf	31,1	;volatile
-   400  0076  284E               	goto	l714
+   400  0076  284E               	goto	l720
    401  0077  120A  118A  280C   	ljmp	start
    402  007A                     __end_of_main:
    403                           
@@ -419,7 +419,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    405  0016                     __ptext1:	
    406 ;; *************** function _configuracion *****************
    407 ;; Defined at:
-   408 ;;		line 98 in file "main.c"
+   408 ;;		line 99 in file "main.c"
    409 ;; Parameters:    Size  Location     Type
    410 ;;		None
    411 ;; Auto vars:     Size  Location     Type
@@ -450,140 +450,140 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    436                           
    437                           ;psect for function _configuracion
    438  0016                     _configuracion:
-   439  0016                     l658:	
+   439  0016                     l660:	
    440                           ;incstack = 0
    441                           ; Regs used in _configuracion: [wreg+status,2+status,0]
    442                           
    443                           
-   444                           ;main.c: 100:     ANSEL = 0X03;
+   444                           ;main.c: 101:     ANSEL = 0X03;
    445  0016  3003               	movlw	3
    446  0017  1683               	bsf	3,5	;RP0=1, select bank3
    447  0018  1703               	bsf	3,6	;RP1=1, select bank3
    448  0019  0088               	movwf	8	;volatile
-   449  001A                     l660:
+   449  001A                     l662:
    450                           
-   451                           ;main.c: 101:     ANSELH = 0X00;
+   451                           ;main.c: 102:     ANSELH = 0X00;
    452  001A  0189               	clrf	9	;volatile
-   453  001B                     l662:
+   453  001B                     l664:
    454                           
-   455                           ;main.c: 102:     TRISA = 0X03;
+   455                           ;main.c: 103:     TRISA = 0X03;
    456  001B  3003               	movlw	3
    457  001C  1683               	bsf	3,5	;RP0=1, select bank1
    458  001D  1303               	bcf	3,6	;RP1=0, select bank1
    459  001E  0085               	movwf	5	;volatile
    460                           
-   461                           ;main.c: 103:     TRISB = 0X00;
+   461                           ;main.c: 104:     TRISB = 0X00;
    462  001F  0186               	clrf	6	;volatile
    463                           
-   464                           ;main.c: 104:     TRISC = 0X00;
+   464                           ;main.c: 105:     TRISC = 0X00;
    465  0020  0187               	clrf	7	;volatile
    466                           
-   467                           ;main.c: 105:     TRISD = 0X00;
+   467                           ;main.c: 106:     TRISD = 0X00;
    468  0021  0188               	clrf	8	;volatile
    469                           
-   470                           ;main.c: 106:     PORTA = 0X00;
+   470                           ;main.c: 107:     PORTA = 0X00;
    471  0022  1283               	bcf	3,5	;RP0=0, select bank0
    472  0023  1303               	bcf	3,6	;RP1=0, select bank0
    473  0024  0185               	clrf	5	;volatile
    474                           
-   475                           ;main.c: 107:     PORTB = 0X00;
+   475                           ;main.c: 108:     PORTB = 0X00;
    476  0025  0186               	clrf	6	;volatile
    477                           
-   478                           ;main.c: 108:     PORTC = 0X00;
+   478                           ;main.c: 109:     PORTC = 0X00;
    479  0026  0187               	clrf	7	;volatile
    480                           
-   481                           ;main.c: 109:     PORTD = 0X00;
+   481                           ;main.c: 110:     PORTD = 0X00;
    482  0027  0188               	clrf	8	;volatile
-   483  0028                     l664:
+   483  0028                     l666:
    484                           
-   485                           ;main.c: 111:     bandera1.chchan = 1;
+   485                           ;main.c: 112:     bandera1.chchan = 1;
    486  0028  14F2               	bsf	_bandera1,1
-   487  0029                     l666:
+   487  0029                     l668:
    488                           
-   489                           ;main.c: 115:     ADCON0bits.ADCS = 0b01;
+   489                           ;main.c: 116:     ADCON0bits.ADCS = 0b01;
    490  0029  081F               	movf	31,w	;volatile
    491  002A  393F               	andlw	-193
    492  002B  3840               	iorlw	64
    493  002C  009F               	movwf	31	;volatile
-   494  002D                     l668:
+   494  002D                     l670:
    495                           
-   496                           ;main.c: 116:     ADCON0bits.CHS = 0b0000;
+   496                           ;main.c: 117:     ADCON0bits.CHS = 0b0000;
    497  002D  30C3               	movlw	-61
    498  002E  059F               	andwf	31,f	;volatile
-   499  002F                     l670:
+   499  002F                     l672:
    500                           
-   501                           ;main.c: 117:     ADCON0bits.GO = 0b0;
+   501                           ;main.c: 118:     ADCON0bits.GO = 0b0;
    502  002F  109F               	bcf	31,1	;volatile
-   503  0030                     l672:
+   503  0030                     l674:
    504                           
-   505                           ;main.c: 118:     ADCON0bits.ADON = 0b1;
+   505                           ;main.c: 119:     ADCON0bits.ADON = 0b1;
    506  0030  141F               	bsf	31,0	;volatile
-   507  0031                     l674:
+   507  0031                     l676:
    508                           
-   509                           ;main.c: 120:     ADCON1bits.ADFM = 0b0;
+   509                           ;main.c: 121:     ADCON1bits.ADFM = 0b0;
    510  0031  1683               	bsf	3,5	;RP0=1, select bank1
    511  0032  1303               	bcf	3,6	;RP1=0, select bank1
    512  0033  139F               	bcf	31,7	;volatile
-   513  0034                     l676:
+   513  0034                     l678:
    514                           
-   515                           ;main.c: 124:     INTCONbits.GIE = 0b1;
+   515                           ;main.c: 125:     INTCONbits.GIE = 0b1;
    516  0034  178B               	bsf	11,7	;volatile
-   517  0035                     l678:
+   517  0035                     l680:
    518                           
-   519                           ;main.c: 125:     INTCONbits.PEIE = 0b1;
+   519                           ;main.c: 126:     INTCONbits.PEIE = 0b1;
    520  0035  170B               	bsf	11,6	;volatile
-   521  0036                     l680:
+   521  0036                     l682:
    522                           
-   523                           ;main.c: 126:     PIE1bits.ADIE = 0b1;
+   523                           ;main.c: 127:     PIE1bits.ADIE = 0b1;
    524  0036  170C               	bsf	12,6	;volatile
-   525  0037                     l682:
+   525  0037                     l684:
    526                           
-   527                           ;main.c: 127:     PIR1bits.ADIF = 0b0;
+   527                           ;main.c: 128:     PIR1bits.ADIF = 0b0;
    528  0037  1283               	bcf	3,5	;RP0=0, select bank0
    529  0038  1303               	bcf	3,6	;RP1=0, select bank0
    530  0039  130C               	bcf	12,6	;volatile
-   531  003A                     l684:
+   531  003A                     l686:
    532                           
-   533                           ;main.c: 130:     OSCCONbits.SCS = 1;
+   533                           ;main.c: 131:     OSCCONbits.SCS = 1;
    534  003A  1683               	bsf	3,5	;RP0=1, select bank1
    535  003B  1303               	bcf	3,6	;RP1=0, select bank1
    536  003C  140F               	bsf	15,0	;volatile
-   537  003D                     l686:
+   537  003D                     l688:
    538                           
-   539                           ;main.c: 131:     OPTION_REGbits.T0CS = 0;
+   539                           ;main.c: 132:     OPTION_REGbits.T0CS = 0;
    540  003D  1281               	bcf	1,5	;volatile
-   541  003E                     l688:
+   541  003E                     l690:
    542                           
-   543                           ;main.c: 132:     OPTION_REGbits.PSA = 0;
+   543                           ;main.c: 133:     OPTION_REGbits.PSA = 0;
    544  003E  1181               	bcf	1,3	;volatile
-   545  003F                     l690:
+   545  003F                     l692:
    546                           
-   547                           ;main.c: 133:     OPTION_REGbits.PS2 = 0;
+   547                           ;main.c: 134:     OPTION_REGbits.PS2 = 0;
    548  003F  1101               	bcf	1,2	;volatile
-   549  0040                     l692:
+   549  0040                     l694:
    550                           
-   551                           ;main.c: 134:     OPTION_REGbits.PS1 = 0;
+   551                           ;main.c: 135:     OPTION_REGbits.PS1 = 0;
    552  0040  1081               	bcf	1,1	;volatile
-   553  0041                     l694:
+   553  0041                     l696:
    554                           
-   555                           ;main.c: 135:     OPTION_REGbits.PS0 = 0;
+   555                           ;main.c: 136:     OPTION_REGbits.PS0 = 0;
    556  0041  1001               	bcf	1,0	;volatile
-   557  0042                     l696:
+   557  0042                     l698:
    558                           
-   559                           ;main.c: 136:     INTCONbits.T0IF = 0;
+   559                           ;main.c: 137:     INTCONbits.T0IF = 0;
    560  0042  110B               	bcf	11,2	;volatile
-   561  0043                     l698:
+   561  0043                     l700:
    562                           
-   563                           ;main.c: 137:     TMR0 = 250;
+   563                           ;main.c: 138:     TMR0 = 250;
    564  0043  30FA               	movlw	250
    565  0044  1283               	bcf	3,5	;RP0=0, select bank0
    566  0045  1303               	bcf	3,6	;RP1=0, select bank0
    567  0046  0081               	movwf	1	;volatile
-   568  0047                     l700:
+   568  0047                     l702:
    569                           
-   570                           ;main.c: 139:     ADCON0bits.GO = 0b1;
+   570                           ;main.c: 140:     ADCON0bits.GO = 0b1;
    571  0047  149F               	bsf	31,1	;volatile
-   572  0048                     l66:
+   572  0048                     l68:
    573  0048  0008               	return
    574  0049                     __end_of_configuracion:
    575                           
@@ -621,7 +621,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    607                           
    608                           ;psect for function _isr
    609  007A                     _isr:
-   610  007A                     i1l702:
+   610  007A                     i1l704:
    611                           
    612                           ;main.c: 61:     if(PIR1bits.ADIF){
    613  007A  1283               	bcf	3,5	;RP0=0, select bank0
@@ -630,16 +630,16 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    616  007D  287F               	goto	u1_21
    617  007E  2880               	goto	u1_20
    618  007F                     u1_21:
-   619  007F  289D               	goto	i1l52
+   619  007F  2899               	goto	i1l54
    620  0080                     u1_20:
-   621  0080                     i1l704:
+   621  0080                     i1l706:
    622                           
    623                           ;main.c: 62:         bandera1.updt = 1;
    624  0080  1472               	bsf	_bandera1,0
    625                           
    626                           ;main.c: 63:         PIR1bits.ADIF = 0;
    627  0081  130C               	bcf	12,6	;volatile
-   628  0082                     i1l706:
+   628  0082                     i1l708:
    629                           
    630                           ;main.c: 64:         bandera1.chchan = ~bandera1.chchan;
    631  0082  1003               	clrc
@@ -654,44 +654,44 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    640  008A                     u2_20:
    641  008A  10F2               	bcf	_bandera1,1
    642  008B                     u3_24:
-   643  008B                     i1l708:
+   643  008B                     i1l710:
    644                           
    645                           ;main.c: 65:         INTCONbits.T0IF = 0;
    646  008B  110B               	bcf	11,2	;volatile
-   647                           
-   648                           ;main.c: 66:         ADCON0bits.CHS0 = ~ADCON0bits.CHS0;
-   649  008C  1003               	clrc
-   650  008D  1283               	bcf	3,5	;RP0=0, select bank0
-   651  008E  1303               	bcf	3,6	;RP1=0, select bank0
-   652  008F  1D1F               	btfss	31,2	;volatile
-   653  0090  1403               	setc
-   654  0091  1803               	btfsc	3,0
-   655  0092  2894               	goto	u4_21
-   656  0093  2898               	goto	u4_20
-   657  0094                     u4_21:
-   658  0094  1283               	bcf	3,5	;RP0=0, select bank0
-   659  0095  1303               	bcf	3,6	;RP1=0, select bank0
-   660  0096  151F               	bsf	31,2	;volatile
-   661  0097  289B               	goto	u5_24
-   662  0098                     u4_20:
-   663  0098  1283               	bcf	3,5	;RP0=0, select bank0
-   664  0099  1303               	bcf	3,6	;RP1=0, select bank0
-   665  009A  111F               	bcf	31,2	;volatile
-   666  009B                     u5_24:
-   667  009B                     i1l710:
+   647  008C                     i1l712:
+   648                           
+   649                           ;main.c: 66:         if (!bandera1.chchan)ADCON0bits.CHS0 = 1;
+   650  008C  18F2               	btfsc	_bandera1,1
+   651  008D  288F               	goto	u4_21
+   652  008E  2890               	goto	u4_20
+   653  008F                     u4_21:
+   654  008F  2894               	goto	i1l52
+   655  0090                     u4_20:
+   656  0090                     i1l714:
+   657  0090  1283               	bcf	3,5	;RP0=0, select bank0
+   658  0091  1303               	bcf	3,6	;RP1=0, select bank0
+   659  0092  151F               	bsf	31,2	;volatile
+   660  0093  2897               	goto	i1l716
+   661  0094                     i1l52:	
+   662                           ;main.c: 67:         else ADCON0bits.CHS0 = 0;
+   663                           
+   664  0094  1283               	bcf	3,5	;RP0=0, select bank0
+   665  0095  1303               	bcf	3,6	;RP1=0, select bank0
+   666  0096  111F               	bcf	31,2	;volatile
+   667  0097                     i1l716:
    668                           
-   669                           ;main.c: 67:         TMR0 = 250;
-   670  009B  30FA               	movlw	250
-   671  009C  0081               	movwf	1	;volatile
-   672  009D                     i1l52:
-   673  009D  0874               	movf	??_isr+1,w
-   674  009E  008A               	movwf	10
-   675  009F  0E73               	swapf	??_isr,w
-   676  00A0  0083               	movwf	3
-   677  00A1  0EFE               	swapf	btemp,f
-   678  00A2  0E7E               	swapf	btemp,w
-   679  00A3  0009               	retfie
-   680  00A4                     __end_of_isr:
+   669                           ;main.c: 68:         TMR0 = 250;
+   670  0097  30FA               	movlw	250
+   671  0098  0081               	movwf	1	;volatile
+   672  0099                     i1l54:
+   673  0099  0874               	movf	??_isr+1,w
+   674  009A  008A               	movwf	10
+   675  009B  0E73               	swapf	??_isr,w
+   676  009C  0083               	movwf	3
+   677  009D  0EFE               	swapf	btemp,f
+   678  009E  0E7E               	swapf	btemp,w
+   679  009F  0009               	retfie
+   680  00A0                     __end_of_isr:
    681  007E                     btemp	set	126	;btemp
    682  007E                     wtemp0	set	126
    683                           
@@ -863,44 +863,44 @@ DATA                 0      0       6      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sat Apr 17 20:44:28 2021
+Symbol Table                                                                                   Sat Apr 17 21:01:51 2021
 
-                     l66 0048                       u60 0052                       u61 0051  
-                     u70 0056                       u71 0055                       u80 005A  
-                     u81 0059                       u90 0068                       u91 0067  
-         ?_configuracion 0073                      l700 0047                      l720 005A  
-                    l712 0049                      l730 006C                      l722 0060  
-                    l714 004E                      l660 001A                      l732 0072  
-                    l724 0063                      l716 0052                      l670 002F  
-                    l662 001B                      l734 0075                      l718 0056  
-                    l726 0064                      l680 0036                      l672 0030  
-                    l664 0028                      l728 0068                      l690 003F  
-                    l682 0037                      l674 0031                      l666 0029  
-                    l658 0016                      l692 0040                      l684 003A  
-                    l676 0034                      l668 002D                      l694 0041  
-                    l686 003D                      l678 0035                      l696 0042  
-                    l688 003E                      l698 0043                      u100 006C  
-                    u101 006B                      _isr 007A                     ?_isr 0073  
-                   i1l52 009D                     _POT1 0071                     _POT2 0070  
-                   _TMR0 0001                     u1_20 0080                     u1_21 007F  
-                   u2_20 008A                     u2_21 0088                     u3_24 008B  
-                   u4_20 0098                     u4_21 0094                     u5_24 009B  
+                     l68 0048                       u50 0052                       u51 0051  
+                     u60 0056                       u61 0055                       u70 005A  
+                     u71 0059                       u80 0068                       u81 0067  
+                     u90 006C                       u91 006B           ?_configuracion 0073  
+                    l700 0043                      l702 0047                      l720 004E  
+                    l730 0063                      l722 0052                      l660 0016  
+                    l740 0075                      l724 0056                      l732 0064  
+                    l670 002D                      l662 001A                      l734 0068  
+                    l726 005A                      l718 0049                      l680 0035  
+                    l672 002F                      l664 001B                      l736 006C  
+                    l728 0060                      l690 003E                      l682 0036  
+                    l674 0030                      l666 0028                      l738 0072  
+                    l692 003F                      l684 0037                      l676 0031  
+                    l668 0029                      l694 0040                      l686 003A  
+                    l678 0034                      l696 0041                      l688 003D  
+                    l698 0042                      _isr 007A                     ?_isr 0073  
+                   i1l52 0094                     i1l54 0099                     _POT1 0071  
+                   _POT2 0070                     _TMR0 0001                     u1_20 0080  
+                   u1_21 007F                     u2_20 008A                     u2_21 0088  
+                   u3_24 008B                     u4_20 0090                     u4_21 008F  
                    _main 0049                     btemp 007E                     start 000C  
                   ??_isr 0073                    ?_main 0073                    _ANSEL 0188  
-                  i1l710 009B                    i1l702 007A                    i1l704 0080  
-                  i1l706 0082                    i1l708 008B                    _PORTA 0005  
-                  _PORTB 0006                    _PORTC 0007                    _PORTD 0008  
-                  _TRISA 0085                    _TRISB 0086                    _TRISC 0087  
-                  _TRISD 0088                    pclath 000A                    status 0003  
-                  wtemp0 007E          __initialization 000F             __end_of_main 007A  
-        ??_configuracion 0075                   ??_main 0075                   _ADRESH 001E  
-                 _ANSELH 0189                   saved_w 007E  __end_of__initialization 0012  
-         __pcstackCOMMON 0073           _OPTION_REGbits 0081               __pmaintext 0049  
-             __pintentry 0004                  __ptext1 0016                  __ptext2 007A  
-           __size_of_isr 002A     end_of_initialization 0012    __end_of_configuracion 0049  
-    start_initialization 000F              __end_of_isr 00A4              __pbssCOMMON 0070  
-              ___latbits 0002        interrupt_function 0004                 _PIE1bits 008C  
-               _PIR1bits 000C               _ADCON0bits 001F               _ADCON1bits 009F  
-               _bandera1 0072   __size_of_configuracion 0033            __size_of_main 0031  
-             _INTCONbits 000B                 intlevel1 0000               _OSCCONbits 008F  
-          _configuracion 0016  
+                  i1l710 008B                    i1l712 008C                    i1l704 007A  
+                  i1l714 0090                    i1l706 0080                    i1l716 0097  
+                  i1l708 0082                    _PORTA 0005                    _PORTB 0006  
+                  _PORTC 0007                    _PORTD 0008                    _TRISA 0085  
+                  _TRISB 0086                    _TRISC 0087                    _TRISD 0088  
+                  pclath 000A                    status 0003                    wtemp0 007E  
+        __initialization 000F             __end_of_main 007A          ??_configuracion 0075  
+                 ??_main 0075                   _ADRESH 001E                   _ANSELH 0189  
+                 saved_w 007E  __end_of__initialization 0012           __pcstackCOMMON 0073  
+         _OPTION_REGbits 0081               __pmaintext 0049               __pintentry 0004  
+                __ptext1 0016                  __ptext2 007A             __size_of_isr 0026  
+   end_of_initialization 0012    __end_of_configuracion 0049      start_initialization 000F  
+            __end_of_isr 00A0              __pbssCOMMON 0070                ___latbits 0002  
+      interrupt_function 0004                 _PIE1bits 008C                 _PIR1bits 000C  
+             _ADCON0bits 001F               _ADCON1bits 009F                 _bandera1 0072  
+ __size_of_configuracion 0033            __size_of_main 0031               _INTCONbits 000B  
+               intlevel1 0000               _OSCCONbits 008F            _configuracion 0016  

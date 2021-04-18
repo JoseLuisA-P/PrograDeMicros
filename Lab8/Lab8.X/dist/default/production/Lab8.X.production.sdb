@@ -13,9 +13,9 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "59 D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab8\Lab8.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"72
+"73
 [v _main main `(v  1 e 1 0 ]
-"98
+"99
 [v _configuracion configuracion `(v  1 e 1 0 ]
 "59 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -155,18 +155,18 @@
 "54
 [v _POT1 POT1 `uc  1 e 1 0 ]
 [v _POT2 POT2 `uc  1 e 1 0 ]
-"72
+"73
 [v _main main `(v  1 e 1 0 ]
 {
-"95
+"96
 } 0
-"98
+"99
 [v _configuracion configuracion `(v  1 e 1 0 ]
 {
-"140
+"141
 } 0
 "59
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"70
+"71
 } 0

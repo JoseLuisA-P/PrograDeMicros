@@ -2870,7 +2870,8 @@ void __attribute__((picinterrupt(("")))) isr(void){
         PIR1bits.ADIF = 0;
         bandera1.chchan = ~bandera1.chchan;
         INTCONbits.T0IF = 0;
-        ADCON0bits.CHS0 = ~ADCON0bits.CHS0;
+        if (!bandera1.chchan)ADCON0bits.CHS0 = 1;
+        else ADCON0bits.CHS0 = 0;
         TMR0 = 250;
     }
 
