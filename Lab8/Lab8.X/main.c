@@ -1,8 +1,15 @@
 /* 
  * File:   main.c
- * Author: jalva
+ * Author: Jose Luis Alvarez Pineda
  *
- * Created on 17 de abril de 2021, 06:23 PM
+ * Creado: 17 de abril de 2021
+ * Modificado:18 de abril de 2021
+ * 
+ * Hardware:
+ * PORTA = Utilizado para manejar entradas analogicas
+ * PORTB = utilizado para las salidas de los leds
+ * PORTC = utilizado para multiplexar
+ * PORTD = utilizado para darle los valores a los displays.
  */
 
 // CONFIG1
