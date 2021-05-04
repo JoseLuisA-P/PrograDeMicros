@@ -86,6 +86,7 @@ void main(void) {
                 estado = 0;
                 break;
             case 2:
+                cambio = 0;
                 sendString("\rValor para el puerto A\r");
                 while(!cambio);
                 PORTA = dato;
@@ -93,6 +94,7 @@ void main(void) {
                 estado = 0;
                 break;
             case 3:
+                cambio = 0;
                 sendString("\rValor para el puerto B\r");
                 while(!cambio);
                 PORTB = dato;
@@ -100,7 +102,6 @@ void main(void) {
                 estado = 0;
                 break;
             case 20:
-                cambio = 0;
                 if(dato == '1') estado = 1;
                 if(dato == '2') estado = 2;
                 if(dato == '3') estado = 3;

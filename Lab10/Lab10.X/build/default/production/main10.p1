@@ -492,84 +492,87 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main10.c: 88:             case 2:
 [e :U 153 ]
 "89
-[; ;main10.c: 89:                 sendString("\rValor para el puerto A\r");
-[e ( _sendString (1 :s 6C ]
+[; ;main10.c: 89:                 cambio = 0;
+[e = _cambio -> -> 0 `i `uc ]
 "90
-[; ;main10.c: 90:                 while(!cambio);
+[; ;main10.c: 90:                 sendString("\rValor para el puerto A\r");
+[e ( _sendString (1 :s 6C ]
+"91
+[; ;main10.c: 91:                 while(!cambio);
 [e $U 154  ]
 [e :U 155 ]
 [e :U 154 ]
 [e $ ! != -> _cambio `i -> 0 `i 155  ]
 [e :U 156 ]
-"91
-[; ;main10.c: 91:                 PORTA = dato;
-[e = _PORTA _dato ]
 "92
-[; ;main10.c: 92:                 dato = 0;
-[e = _dato -> -> 0 `i `uc ]
+[; ;main10.c: 92:                 PORTA = dato;
+[e = _PORTA _dato ]
 "93
-[; ;main10.c: 93:                 estado = 0;
-[e = _estado -> -> 0 `i `uc ]
+[; ;main10.c: 93:                 dato = 0;
+[e = _dato -> -> 0 `i `uc ]
 "94
-[; ;main10.c: 94:                 break;
-[e $U 149  ]
+[; ;main10.c: 94:                 estado = 0;
+[e = _estado -> -> 0 `i `uc ]
 "95
-[; ;main10.c: 95:             case 3:
-[e :U 157 ]
+[; ;main10.c: 95:                 break;
+[e $U 149  ]
 "96
-[; ;main10.c: 96:                 sendString("\rValor para el puerto B\r");
-[e ( _sendString (1 :s 7C ]
+[; ;main10.c: 96:             case 3:
+[e :U 157 ]
 "97
-[; ;main10.c: 97:                 while(!cambio);
+[; ;main10.c: 97:                 cambio = 0;
+[e = _cambio -> -> 0 `i `uc ]
+"98
+[; ;main10.c: 98:                 sendString("\rValor para el puerto B\r");
+[e ( _sendString (1 :s 7C ]
+"99
+[; ;main10.c: 99:                 while(!cambio);
 [e $U 158  ]
 [e :U 159 ]
 [e :U 158 ]
 [e $ ! != -> _cambio `i -> 0 `i 159  ]
 [e :U 160 ]
-"98
-[; ;main10.c: 98:                 PORTB = dato;
-[e = _PORTB _dato ]
-"99
-[; ;main10.c: 99:                 dato = 0;
-[e = _dato -> -> 0 `i `uc ]
 "100
-[; ;main10.c: 100:                 estado = 0;
-[e = _estado -> -> 0 `i `uc ]
+[; ;main10.c: 100:                 PORTB = dato;
+[e = _PORTB _dato ]
 "101
-[; ;main10.c: 101:                 break;
-[e $U 149  ]
+[; ;main10.c: 101:                 dato = 0;
+[e = _dato -> -> 0 `i `uc ]
 "102
-[; ;main10.c: 102:             case 20:
-[e :U 161 ]
+[; ;main10.c: 102:                 estado = 0;
+[e = _estado -> -> 0 `i `uc ]
 "103
-[; ;main10.c: 103:                 cambio = 0;
-[e = _cambio -> -> 0 `i `uc ]
+[; ;main10.c: 103:                 break;
+[e $U 149  ]
 "104
-[; ;main10.c: 104:                 if(dato == '1') estado = 1;
+[; ;main10.c: 104:             case 20:
+[e :U 161 ]
+"105
+[; ;main10.c: 105:                 if(dato == '1') estado = 1;
 [e $ ! == -> _dato `ui -> 49 `ui 162  ]
 [e = _estado -> -> 1 `i `uc ]
 [e :U 162 ]
-"105
-[; ;main10.c: 105:                 if(dato == '2') estado = 2;
+"106
+[; ;main10.c: 106:                 if(dato == '2') estado = 2;
 [e $ ! == -> _dato `ui -> 50 `ui 163  ]
 [e = _estado -> -> 2 `i `uc ]
 [e :U 163 ]
-"106
-[; ;main10.c: 106:                 if(dato == '3') estado = 3;
+"107
+[; ;main10.c: 107:                 if(dato == '3') estado = 3;
 [e $ ! == -> _dato `ui -> 51 `ui 164  ]
 [e = _estado -> -> 3 `i `uc ]
 [e :U 164 ]
-"107
-[; ;main10.c: 107:                 break;
-[e $U 149  ]
 "108
-[; ;main10.c: 108:             default:
-[e :U 165 ]
-"109
-[; ;main10.c: 109:                 break;
+[; ;main10.c: 108:                 break;
 [e $U 149  ]
+"109
+[; ;main10.c: 109:             default:
+[e :U 165 ]
 "110
-[; ;main10.c: 110:         }
+[; ;main10.c: 110:                 break;
+[e $U 149  ]
+"111
+[; ;main10.c: 111:         }
 }
 [e $U 149  ]
 [e :U 150 ]
@@ -580,138 +583,138 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 20 `i 161
  165 ]
 [e :U 149 ]
-"111
-[; ;main10.c: 111:     }
+"112
+[; ;main10.c: 112:     }
 }
 [e :U 146 ]
 [e $U 147  ]
 [e :U 148 ]
-"112
-[; ;main10.c: 112: }
+"113
+[; ;main10.c: 113: }
 [e :UE 145 ]
 }
-"114
-[; ;main10.c: 114: void configuraciones(void){
+"115
+[; ;main10.c: 115: void configuraciones(void){
 [v _configuraciones `(v ~T0 @X0 1 ef ]
 {
 [e :U _configuraciones ]
 [f ]
-"115
-[; ;main10.c: 115:     ANSEL = 0X00;
-[e = _ANSEL -> -> 0 `i `uc ]
 "116
-[; ;main10.c: 116:     ANSELH = 0X00;
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;main10.c: 116:     ANSEL = 0X00;
+[e = _ANSEL -> -> 0 `i `uc ]
 "117
-[; ;main10.c: 117:     TRISA = 0X00;
-[e = _TRISA -> -> 0 `i `uc ]
+[; ;main10.c: 117:     ANSELH = 0X00;
+[e = _ANSELH -> -> 0 `i `uc ]
 "118
-[; ;main10.c: 118:     TRISB = 0X00;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;main10.c: 118:     TRISA = 0X00;
+[e = _TRISA -> -> 0 `i `uc ]
 "119
-[; ;main10.c: 119:     TRISCbits.TRISC6 = 0;
-[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+[; ;main10.c: 119:     TRISB = 0X00;
+[e = _TRISB -> -> 0 `i `uc ]
 "120
-[; ;main10.c: 120:     TRISCbits.TRISC7 = 1;
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+[; ;main10.c: 120:     TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
 "121
-[; ;main10.c: 121:     PORTA = 0X00;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;main10.c: 121:     TRISCbits.TRISC7 = 1;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
 "122
-[; ;main10.c: 122:     PORTB = 0X00;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;main10.c: 122:     PORTA = 0X00;
+[e = _PORTA -> -> 0 `i `uc ]
 "123
-[; ;main10.c: 123:     PORTC = 0X00;
+[; ;main10.c: 123:     PORTB = 0X00;
+[e = _PORTB -> -> 0 `i `uc ]
+"124
+[; ;main10.c: 124:     PORTC = 0X00;
 [e = _PORTC -> -> 0 `i `uc ]
-"125
-[; ;main10.c: 125:     estado = 0;
+"126
+[; ;main10.c: 126:     estado = 0;
 [e = _estado -> -> 0 `i `uc ]
-"128
-[; ;main10.c: 128:     OSCCONbits.IRCF = 0b111;
-[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
 "129
-[; ;main10.c: 129:     OSCCONbits.SCS = 0b1;
+[; ;main10.c: 129:     OSCCONbits.IRCF = 0b111;
+[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
+"130
+[; ;main10.c: 130:     OSCCONbits.SCS = 0b1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"132
-[; ;main10.c: 132:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "133
-[; ;main10.c: 133:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main10.c: 133:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "134
-[; ;main10.c: 134:     PIE1bits.RCIE = 1;
+[; ;main10.c: 134:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"135
+[; ;main10.c: 135:     PIE1bits.RCIE = 1;
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"137
-[; ;main10.c: 137:     SPBRG = 12;
-[e = _SPBRG -> -> 12 `i `uc ]
 "138
-[; ;main10.c: 138:     TXSTAbits.BRGH = 0;
-[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+[; ;main10.c: 138:     SPBRG = 12;
+[e = _SPBRG -> -> 12 `i `uc ]
 "139
-[; ;main10.c: 139:     TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;main10.c: 139:     TXSTAbits.BRGH = 0;
+[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
 "140
-[; ;main10.c: 140:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;main10.c: 140:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
 "141
-[; ;main10.c: 141:     TXSTAbits.SYNC = 0;
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;main10.c: 141:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "142
-[; ;main10.c: 142:     RCSTAbits.SPEN = 1;
+[; ;main10.c: 142:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"143
+[; ;main10.c: 143:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"144
-[; ;main10.c: 144: }
+"145
+[; ;main10.c: 145: }
 [e :UE 166 ]
 }
-"146
-[; ;main10.c: 146: void send1dato(char dato){
+"147
+[; ;main10.c: 147: void send1dato(char dato){
 [v _send1dato `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _send1dato ]
 [v _dato `uc ~T0 @X0 1 r1 ]
 [f ]
-"147
-[; ;main10.c: 147:     TXREG = dato;
-[e = _TXREG -> _dato `uc ]
 "148
-[; ;main10.c: 148:     while(!TXSTAbits.TRMT);
+[; ;main10.c: 148:     TXREG = dato;
+[e = _TXREG -> _dato `uc ]
+"149
+[; ;main10.c: 149:     while(!TXSTAbits.TRMT);
 [e $U 168  ]
 [e :U 169 ]
 [e :U 168 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 169  ]
 [e :U 170 ]
-"149
-[; ;main10.c: 149: }
+"150
+[; ;main10.c: 150: }
 [e :UE 167 ]
 }
-"151
-[; ;main10.c: 151: void sendString(unsigned char* mensaje){
+"152
+[; ;main10.c: 152: void sendString(unsigned char* mensaje){
 [v _sendString `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _sendString ]
 [v _mensaje `*uc ~T0 @X0 1 r1 ]
 [f ]
-"152
-[; ;main10.c: 152:     while(*mensaje != 0x00){
+"153
+[; ;main10.c: 153:     while(*mensaje != 0x00){
 [e $U 172  ]
 [e :U 173 ]
 {
-"153
-[; ;main10.c: 153:         send1dato(*mensaje);
-[e ( _send1dato (1 -> *U _mensaje `uc ]
 "154
-[; ;main10.c: 154:         mensaje ++;
-[e ++ _mensaje * -> -> 1 `i `x -> -> # *U _mensaje `i `x ]
+[; ;main10.c: 154:         send1dato(*mensaje);
+[e ( _send1dato (1 -> *U _mensaje `uc ]
 "155
-[; ;main10.c: 155:     }
+[; ;main10.c: 155:         mensaje ++;
+[e ++ _mensaje * -> -> 1 `i `x -> -> # *U _mensaje `i `x ]
+"156
+[; ;main10.c: 156:     }
 }
 [e :U 172 ]
-"152
-[; ;main10.c: 152:     while(*mensaje != 0x00){
+"153
+[; ;main10.c: 153:     while(*mensaje != 0x00){
 [e $ != -> *U _mensaje `i -> 0 `i 173  ]
 [e :U 174 ]
-"157
-[; ;main10.c: 157: }
+"158
+[; ;main10.c: 158: }
 [e :UE 171 ]
 }
 [a 4C 40 51 41 32 67 97 109 98 105 97 114 32 80 79 82 84 66 13 0 ]

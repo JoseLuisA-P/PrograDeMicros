@@ -13,17 +13,17 @@
 %PSECTS
 $dist/default/production\Lab10.X.production.o
 cinit CODE 0 F F 7 2
-text1 CODE 0 176 176 1F 2
-text2 CODE 0 1A9 1A9 C 2
-text3 CODE 0 150 150 26 2
-text4 CODE 0 195 195 14 2
-maintext CODE 0 CA CA 86 2
+text1 CODE 0 177 177 1F 2
+text2 CODE 0 1AA 1AA C 2
+text3 CODE 0 151 151 26 2
+text4 CODE 0 196 196 14 2
+maintext CODE 0 CA CA 87 2
 cstackCOMMON COMMON 1 70 70 8 1
 intentry CODE 0 4 4 8 2
 strings STRING 0 16 16 B4 2
 bssCOMMON COMMON 1 78 78 3 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\jalva\AppData\Local\Temp\s5ho.o
+$C:\Users\jalva\AppData\Local\Temp\s9h8.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -42,13 +42,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 1B5-1FFF 2
+CONST 1B6-1FFF 2
 ENTRY 3-3 2
-ENTRY 1B5-1FFF 2
+ENTRY 1B6-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 1B5-1FFF 2
+CODE 1B6-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -56,9 +56,9 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 1B5-1FFF 2
+STRCODE 1B6-1FFF 2
 STRING 3-3 2
-STRING 1B5-1FFF 2
+STRING 1B6-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -73,54 +73,54 @@ STRING 1B5-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab10.X.production.o
-F cinit CODE >680:C:\Users\jalva\AppData\Local\Temp\s5ho.s
-F cinit CODE >683:C:\Users\jalva\AppData\Local\Temp\s5ho.s
-F cinit CODE >700:C:\Users\jalva\AppData\Local\Temp\s5ho.s
-10 cinit CODE >701:C:\Users\jalva\AppData\Local\Temp\s5ho.s
-11 cinit CODE >702:C:\Users\jalva\AppData\Local\Temp\s5ho.s
-12 cinit CODE >708:C:\Users\jalva\AppData\Local\Temp\s5ho.s
-12 cinit CODE >710:C:\Users\jalva\AppData\Local\Temp\s5ho.s
-13 cinit CODE >711:C:\Users\jalva\AppData\Local\Temp\s5ho.s
+F cinit CODE >680:C:\Users\jalva\AppData\Local\Temp\s9h8.s
+F cinit CODE >683:C:\Users\jalva\AppData\Local\Temp\s9h8.s
+F cinit CODE >700:C:\Users\jalva\AppData\Local\Temp\s9h8.s
+10 cinit CODE >701:C:\Users\jalva\AppData\Local\Temp\s9h8.s
+11 cinit CODE >702:C:\Users\jalva\AppData\Local\Temp\s9h8.s
+12 cinit CODE >708:C:\Users\jalva\AppData\Local\Temp\s9h8.s
+12 cinit CODE >710:C:\Users\jalva\AppData\Local\Temp\s9h8.s
+13 cinit CODE >711:C:\Users\jalva\AppData\Local\Temp\s9h8.s
 4 intentry CODE >56:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-195 text4 CODE >56:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-195 text4 CODE >57:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-19B text4 CODE >58:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-19F text4 CODE >59:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-1A0 text4 CODE >60:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-1A2 text4 CODE >62:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-150 text3 CODE >114:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-150 text3 CODE >115:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-153 text3 CODE >116:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+196 text4 CODE >56:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+196 text4 CODE >57:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+19C text4 CODE >58:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+1A0 text4 CODE >59:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+1A1 text4 CODE >60:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+1A3 text4 CODE >62:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+151 text3 CODE >115:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+151 text3 CODE >116:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 154 text3 CODE >117:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-157 text3 CODE >118:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+155 text3 CODE >118:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 158 text3 CODE >119:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 159 text3 CODE >120:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 15A text3 CODE >121:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-15D text3 CODE >122:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+15B text3 CODE >122:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 15E text3 CODE >123:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-15F text3 CODE >125:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-160 text3 CODE >128:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-164 text3 CODE >129:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-165 text3 CODE >132:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+15F text3 CODE >124:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+160 text3 CODE >126:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+161 text3 CODE >129:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+165 text3 CODE >130:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 166 text3 CODE >133:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 167 text3 CODE >134:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-168 text3 CODE >137:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-16A text3 CODE >138:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+168 text3 CODE >135:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+169 text3 CODE >138:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 16B text3 CODE >139:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 16C text3 CODE >140:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-16F text3 CODE >141:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-172 text3 CODE >142:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-175 text3 CODE >144:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-1A9 text2 CODE >146:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+16D text3 CODE >141:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+170 text3 CODE >142:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+173 text3 CODE >143:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+176 text3 CODE >145:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 1AA text2 CODE >147:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-1AE text2 CODE >148:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-1B4 text2 CODE >149:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-176 text1 CODE >151:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+1AB text2 CODE >148:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+1AF text2 CODE >149:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+1B5 text2 CODE >150:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 177 text1 CODE >152:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 178 text1 CODE >153:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-184 text1 CODE >154:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-188 text1 CODE >152:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-194 text1 CODE >157:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+179 text1 CODE >154:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+185 text1 CODE >155:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+189 text1 CODE >153:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+195 text1 CODE >158:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 CA maintext CODE >64:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 CA maintext CODE >66:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 D0 maintext CODE >77:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
@@ -134,16 +134,17 @@ F3 maintext CODE >85:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\
 F4 maintext CODE >86:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 F5 maintext CODE >87:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 F6 maintext CODE >89:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-FC maintext CODE >90:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-101 maintext CODE >91:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-106 maintext CODE >96:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-10C maintext CODE >97:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-111 maintext CODE >98:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-116 maintext CODE >103:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-117 maintext CODE >104:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-11F maintext CODE >105:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-129 maintext CODE >106:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
-134 maintext CODE >110:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+F7 maintext CODE >90:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+FD maintext CODE >91:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+102 maintext CODE >92:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+107 maintext CODE >97:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+108 maintext CODE >98:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+10E maintext CODE >99:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+113 maintext CODE >100:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+118 maintext CODE >105:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+120 maintext CODE >106:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+12A maintext CODE >107:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
+135 maintext CODE >111:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\PrograDeMicros\Lab10\Lab10.X\main10.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -158,43 +159,43 @@ FC maintext CODE >90:D:\UVG\UVG\UVG5toSemestre\PorgramacionDeMicrocontroladores\
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __size_of_sendString 0 0 ABS 0 - dist/default/production\Lab10.X.production.o
-__Hspace_0 1B5 0 ABS 0 - -
+__Hspace_0 1B6 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\s5ho.o
+___sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\s9h8.o
 _dato 79 0 COMMON 1 bssCOMMON dist/default/production\Lab10.X.production.o
 _main 194 0 CODE 0 maintext dist/default/production\Lab10.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab10.X.production.o
-start 18 0 CODE 0 init C:\Users\jalva\AppData\Local\Temp\s5ho.o
+start 18 0 CODE 0 init C:\Users\jalva\AppData\Local\Temp\s9h8.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s5ho.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s5ho.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s5ho.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s5ho.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s5ho.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s5ho.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9h8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9h8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9h8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9h8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9h8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\jalva\AppData\Local\Temp\s9h8.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab10.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_send1dato 36A 0 CODE 0 text2 dist/default/production\Lab10.X.production.o
+__end_of_send1dato 36C 0 CODE 0 text2 dist/default/production\Lab10.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __size_of_send1dato 0 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-_send1dato 352 0 CODE 0 text2 dist/default/production\Lab10.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\s5ho.o
-___stacklo 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\s5ho.o
+_send1dato 354 0 CODE 0 text2 dist/default/production\Lab10.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\s9h8.o
+___stacklo 0 0 ABS 0 - C:\Users\jalva\AppData\Local\Temp\s9h8.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Lab10.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\Lab10.X.production.o
 sendString@mensaje 75 0 COMMON 1 cstackCOMMON dist/default/production\Lab10.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\s5ho.o
+___int_sp 0 0 STACK 2 stack C:\Users\jalva\AppData\Local\Temp\s9h8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -228,9 +229,9 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-__end_of_configuraciones 2EC 0 CODE 0 text3 dist/default/production\Lab10.X.production.o
+__end_of_configuraciones 2EE 0 CODE 0 text3 dist/default/production\Lab10.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 1B5 0 ABS 0 - -
+__S0 1B6 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
@@ -238,17 +239,17 @@ _cambio 78 0 COMMON 1 bssCOMMON dist/default/production\Lab10.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Lab10.X.production.o
 _estado 7A 0 COMMON 1 bssCOMMON dist/default/production\Lab10.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-_sendString 2EC 0 CODE 0 text1 dist/default/production\Lab10.X.production.o
+_sendString 2EE 0 CODE 0 text1 dist/default/production\Lab10.X.production.o
 __stringtab 2C 0 STRING 0 strings dist/default/production\Lab10.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\jalva\AppData\Local\Temp\s5ho.o
-_configuraciones 2A0 0 CODE 0 text3 dist/default/production\Lab10.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\jalva\AppData\Local\Temp\s9h8.o
+_configuraciones 2A2 0 CODE 0 text3 dist/default/production\Lab10.X.production.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Lab10.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __pmaintext 194 0 CODE 0 maintext dist/default/production\Lab10.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-__end_of_rutinterrupcion 352 0 CODE 0 text4 dist/default/production\Lab10.X.production.o
-__end_of_sendString 32A 0 CODE 0 text1 dist/default/production\Lab10.X.production.o
+__end_of_rutinterrupcion 354 0 CODE 0 text4 dist/default/production\Lab10.X.production.o
+__end_of_sendString 32C 0 CODE 0 text1 dist/default/production\Lab10.X.production.o
 __end_of__stringtab 38 0 STRING 0 strings dist/default/production\Lab10.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
@@ -264,11 +265,11 @@ __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __size_of_configuraciones 0 0 ABS 0 - dist/default/production\Lab10.X.production.o
-__ptext1 2EC 0 CODE 0 text1 dist/default/production\Lab10.X.production.o
-__ptext2 352 0 CODE 0 text2 dist/default/production\Lab10.X.production.o
-__ptext3 2A0 0 CODE 0 text3 dist/default/production\Lab10.X.production.o
-__ptext4 32A 0 CODE 0 text4 dist/default/production\Lab10.X.production.o
-_rutinterrupcion 32A 0 CODE 0 text4 dist/default/production\Lab10.X.production.o
+__ptext1 2EE 0 CODE 0 text1 dist/default/production\Lab10.X.production.o
+__ptext2 354 0 CODE 0 text2 dist/default/production\Lab10.X.production.o
+__ptext3 2A2 0 CODE 0 text3 dist/default/production\Lab10.X.production.o
+__ptext4 32C 0 CODE 0 text4 dist/default/production\Lab10.X.production.o
+_rutinterrupcion 32C 0 CODE 0 text4 dist/default/production\Lab10.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 send1dato@dato 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab10.X.production.o
@@ -279,7 +280,7 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab10.X.production.o
 _TXSTAbits 98 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 2A0 0 CODE 0 maintext dist/default/production\Lab10.X.production.o
+__end_of_main 2A2 0 CODE 0 maintext dist/default/production\Lab10.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Lab10.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Lab10.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Lab10.X.production.o
@@ -321,7 +322,7 @@ __size_of_rutinterrupcion 0 0 ABS 0 - dist/default/production\Lab10.X.production
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-maintext 0 CA 194 EB 2
+maintext 0 CA 194 EC 2
 cstackCOMMON 1 70 70 B 1
 intentry 0 4 8 12 2
 reset_vec 0 0 0 3 2
